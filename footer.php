@@ -120,3 +120,19 @@
     });
 </script>
 <?php $this->footer(); ?>
+<div style="display: none;">
+    <i class="miao miao-home"></i>
+    <i class="miao miao-crop"></i>
+    <i class="miao miao-pencil-square-o"></i>
+    <i class="miao miao-code"></i>
+    <i class="miao miao-align-left"></i>
+    <i class="miao miao-mars-stroke"></i>
+    <i class="miao miao-cc"></i>
+    <i class="miao miao-wordpress"></i>
+    <i class="miao miao-copyright"></i>
+    <i class="miao miao-guidedog"></i>
+    <i class="miao miao-headphones"></i>
+    <i class="miao miao-steam"></i>
+    <i class="miao miao-qq"></i>
+    <i class="miao miao-mail-alt"></i>
+</div>
