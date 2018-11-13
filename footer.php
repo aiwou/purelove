@@ -88,10 +88,14 @@
             </div>
         </div>
     </footer>
+<!--JQ-->
+<script src="<?php $this->options->themeUrl('js/jquery.min.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/responsiveslides.min.js'); ?>"></script>
 <script src='<?php $this->options->themeUrl('js/highlight.pack.js'); ?>'></script>
 <script src='<?php $this->options->themeUrl('js/wp-embed.min.js'); ?>'></script>
+<?php if ($this->is('index')):?>
+<!--首页才会显示幻灯片-->
 <script>
     jQuery(document).ready(function ($) {
         //幻灯片
@@ -111,6 +115,11 @@
         }, function () {
             $(".slide_nav").fadeOut(200)
         });
+    });
+</script>
+<?php endif;?>
+<script>
+    jQuery(document).ready(function ($) {
         function d() {
             document.title = document[b] ? " :( 人呢? 回来" : a
         }

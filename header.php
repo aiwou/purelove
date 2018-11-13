@@ -19,8 +19,6 @@
 
     <!--样式-->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
-    <!--JQ-->
-    <script src="<?php $this->options->themeUrl('js/jquery.min.js'); ?>"></script>
     <!--icon-->
     <link rel="icon" href="https://www.azimiao.com/wp-content/themes/purelove/favicon.ico" type="image/x-icon"/>
 
