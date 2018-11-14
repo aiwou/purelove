@@ -66,7 +66,8 @@ $this->need('header.php');
                 </div>
             </article>
         <?php endwhile; ?>
-    <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;', null, null, ['wrapTag' => 'div', 'wrapClass' => 'pagenavi']); ?>
+    <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;', 5, '...', ['wrapTag' => 'div', 'wrapClass' => 'pagenavi']); ?>
     </section><!-- #content -->
     <?php $this->need('sidebar.php'); ?>
-    <?php $this->need('footer.php'); ?>
+</section>
+<?php $this->need('footer.php'); ?>

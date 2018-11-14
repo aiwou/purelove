@@ -30,7 +30,12 @@
             <div class="entry-content" itemtype="http://schema.org/Article" itemprop="articleBody">
                 <?php $this->content(); ?>
             </div>
-            <div id="heart" style="text-align: center;"><embed src="https://www.azimiao.com/wp-content/themes/purelove/images/heart1.svg" width="64" height="64" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"></div>
+            <div class="AdPositionId">
+            <!--广告位-->
+            </div>
+            <div id="heart" class="center">
+                <img src="<?php $this->options->themeUrl('images/heart.png')?>">
+            </div>
 
             <span class="poststags clearfix" itemprop="tags">
                 <?php $this->tags('', true, 'none'); ?>
@@ -51,5 +56,6 @@
         <?php $this->need('comments.php'); ?>
         </article>
     </section>
-<?php $this->need('sidebar.php'); ?>
+    <?php $this->need('sidebar.php'); ?>
+</section>
 <?php $this->need('footer.php'); ?>

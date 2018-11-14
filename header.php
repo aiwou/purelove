@@ -20,7 +20,9 @@
     <!--样式-->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
     <!--icon-->
-    <link rel="icon" href="https://www.azimiao.com/wp-content/themes/purelove/favicon.ico" type="image/x-icon"/>
+    <!--<link rel="icon" href="https://www.azimiao.com/wp-content/themes/purelove/favicon.ico" type="image/x-icon"/>-->
+    <!--图标库-->
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel='stylesheet' id='pure-highlightjs-style-css' href='<?php $this->options->themeUrl('css/tomorrow.css'); ?>' type='text/css' media='all'/>
     <link rel='stylesheet' id='pure-highlightjs-css-css' href='<?php $this->options->themeUrl('css/pure-highlight.css'); ?>' type='text/css' media='all'/>
@@ -46,10 +48,10 @@
                 <?php else: ?>
                     <div id="title">
                         <a href="#">
-                            <img src="#" alt="暂无Logo">
+                            <img src="#" alt="<?php _e('暂无Logo'); ?>">
                         </a>
                     </div>
-                    <div id="tagline" style="color:#ff8c83;padding:0">暂无描述</div>
+                    <div id="tagline" style="color:#ff8c83;padding:0"><?php _e('暂无描述'); ?></div>
                 <?php endif; ?>
             </div>
             <div class="navpic">
@@ -65,17 +67,19 @@
             <div class="menu-menu-container">
                 <ul id="menu-menu" class="menu">
                     <li class="<?php $this->is('index') ? 'current-menu-item' : '' ?>">
-                        <a href=<?php $this->options->siteUrl(); ?>><i class="miao miao-home miao-fw"></i> <?php _e('首页'); ?></a>
+                        <a href=<?php $this->options->siteUrl(); ?>><i class="fa fa-home"></i> <?php _e('首页'); ?></a>
                     </li>
                     <!--分类-->
                     <li class="menu-item">
-                        <a href="#"><i class="miao miao-pencil-square-o miao-fw"></i> 分类</a>
+                        <a href="#"><i class="fa fa-pencil-square-o"></i> <?php _e('分类'); ?></a>
                         <ul class="sub-menu">
                             <?php $this->widget('Widget_Metas_Category_List')->to($cats);?>
                             <?php while ($cats->next()): ?>
                                 <li>
-<!--                                    <i class="miao miao-align-left miao-fw"></i>-->
-                                    <a href="<?php $cats->permalink()?>"><?php $cats->name()?></a>
+                                    <a href="<?php $cats->permalink()?>" title="<?php $cats->name()?>">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                        <span><?php $cats->name()?></span>
+                                    </a>
                                 </li>
                             <?php endwhile; ?>
                         </ul>
@@ -84,7 +88,7 @@
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while($pages->next()): ?>
                     <li class="<?php $this->is('page', $pages->slug) ? 'current-menu-item' : ''; ?>">
-                        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><i class="miao miao-align-left miao-fw"></i> <?php $pages->title(); ?></a>
+                        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><i class="fa fa-align-left"></i> <?php $pages->title(); ?></a>
                     </li>
                     <?php endwhile; ?>
                 </ul>
