@@ -1,8 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!--评论-->
-<h3 class="coms_underline">
-    我来吐槽
-</h3>
 <?php function threadedComments($comments, $options)
 {
     $commentClass = '';
@@ -15,7 +12,6 @@
     }
     $commentLevelClass = $comments->levels > 0 ? ' comment-children' : ' comment-parent';
     ?>
-
     <li id="li-<?php $comments->theId(); ?>" class="comment<?php
     if ($comments->levels > 0) {
         echo ' comment-children';
@@ -27,21 +23,17 @@
     echo $commentClass;
     ?>">
         <div id="<?php $comments->theId(); ?>">
-            <div class="coms_floor"><a href="#comment-2573">xx楼</a></div>
+            <!--<div class="coms_floor"><a href="#comment-2573">xx楼</a></div>-->
             <div class="coms_avatar"><?php $comments->gravatar('40', ''); ?></div>
             <div class="coms_main">
                 <div class="coms_meta">
                     <span class="coms_author">
-                        <a href="#" target="_blank" rel="external nofollow" class="url">
-                            <?php $comments->author(); ?>
-                        </a>
-                        <span>XXX<?php echo getOS($comments->agent); ?></span>
-                        <span>xxx2<?php echo getBrowser($comments->agent); ?></span>
+                        <span rel="external nofollow" class="url"><?php $comments->author(); ?></span>
+                        <span><?php echo getOS($comments->agent); ?></span>
+                        <span><?php echo getBrowser($comments->agent); ?></span>
                     </span>
                     <a href="<?php $comments->permalink(); ?>"><?php $comments->date(); ?></a>
-                    <a rel="nofollow" class="comment-reply comment-reply-link">
-                        <?php $comments->reply(); ?>
-                    </a>
+                    <a rel="nofollow" class="comment-reply comment-reply-link"><?php $comments->reply(); ?></a>
                 </div>
                 <p><?php $comments->content(); ?></p>
             </div>
@@ -59,8 +51,10 @@
     <?php $this->comments()->to($comments); ?>
     <div class="comments-header" id="<?php $this->respondId(); ?>">
         <?php if ($this->allow('comment')): ?>
-            <h3 class="comment-title"><?php $comments->cancelReply('取消回复'); ?></h3>
             <form action="<?php $this->commentUrl() ?>" method="post" id="commentform">
+                <h3 class="coms_underline">
+                    我来吐槽
+                </h3>
                 <div id="comment-author-info">
                     <?php if ($this->user->hasLogin()): ?>
                         <h5>
@@ -99,6 +93,7 @@
                 </div>
                 <div class="subcon">
                     <input class="btn primary" type="submit" name="submit" id="submit" tabindex="5" value="<?php _e('吐槽一下'); ?>">
+                    <div class="cancel-comment"><?php $comments->cancelReply(); ?></div>
                 </div>
             </form>
         <?php endif; ?>

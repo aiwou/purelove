@@ -2801,3 +2801,15 @@ span.myinfo_pic {
 #heart img {
     width: 60px;
 }
+
+.cancel-comment a:hover {
+    color: #ff8c83;
+}
+
+/*//f9f9f9*/
+/*
+#comments .comment-list .children {
+    background: #f8f8f8;
+    !*border-radius: 2px;*!
+    !*border:2px red solid;*!
+}*/
