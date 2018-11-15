@@ -2806,10 +2806,27 @@ span.myinfo_pic {
     color: #ff8c83;
 }
 
-/*//f9f9f9*/
-/*
-#comments .comment-list .children {
-    background: #f8f8f8;
-    !*border-radius: 2px;*!
-    !*border:2px red solid;*!
-}*/
+#comments .thread-level-odd, #comments .thread-level-even {
+    border-radius: 22px;
+    background-color: #ffffff;
+
+}
+#comments .thread-level-odd {
+    background-color: #f6f6f6;
+}
+
+#commentform button {
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    margin: 4px auto 0;
+    padding: 0 4px;
+    color: #666666;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #b7b7b7;
+    border-radius: 2px;
+}
+.coms_main .coms_meta .coms_author .user-agent-icon i {
+    color: #ffa099;
+    margin: 0 1px;
+}

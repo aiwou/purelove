@@ -2,10 +2,11 @@
 <!--评论-->
 <?php function threadedComments($comments, $options)
 {
-    $commentClass = '';
+    $commentClass = $authorIdIcon = '';
     if ($comments->authorId) {
         if ($comments->authorId == $comments->ownerId) {
             $commentClass .= ' comment-by-author';
+            $authorIdIcon = '<i class="fa fa-heart-o" aria-hidden="true" title="博主"></i>';
         } else {
             $commentClass .= ' comment-by-user';
         }
@@ -19,7 +20,6 @@
     } else {
         echo ' comment-parent';
     }
-    $comments->alt(' thread-odd', ' thread-even');
     echo $commentClass;
     ?>">
         <div id="<?php $comments->theId(); ?>">
@@ -29,8 +29,9 @@
                 <div class="coms_meta">
                     <span class="coms_author">
                         <span rel="external nofollow" class="url"><?php $comments->author(); ?></span>
-                        <span><?php echo getOS($comments->agent); ?></span>
-                        <span><?php echo getBrowser($comments->agent); ?></span>
+                        <span class="user-agent-icon">
+                            <?php echo $authorIdIcon; echo getOS($comments->agent); echo getBrowser($comments->agent); ?>
+                        </span>
                     </span>
                     <a href="<?php $comments->permalink(); ?>"><?php $comments->date(); ?></a>
                     <a rel="nofollow" class="comment-reply comment-reply-link"><?php $comments->reply(); ?></a>
@@ -57,11 +58,13 @@
                 </h3>
                 <div id="comment-author-info">
                     <?php if ($this->user->hasLogin()): ?>
-                        <h5>
-                            <?php _e('登录身份: '); ?>
-                            <a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>.
+                        <div>
+                            <a href="<?php $this->options->profileUrl(); ?>">
+                                <?php $this->user->screenName(); ?>
+                                <?php _e('已登录'); ?>
+                            </a>.
                             <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?>&raquo;</a>
-                        </h5>
+                        </div>
                     <?php else: // if($this->user->hasLogin()) else  ?>
                     <p>
                         <label for="author"><?php _e('昵称'); ?></label>
@@ -92,14 +95,16 @@
                     <textarea name="text" id="comment" required cols="100%" rows="7" tabindex="4"><?php $this->remember('text'); ?></textarea>
                 </div>
                 <div class="subcon">
-                    <input class="btn primary" type="submit" name="submit" id="submit" tabindex="5" value="<?php _e('吐槽一下'); ?>">
+                    <button class="btn btn-primary"><?php _e('吐槽一下'); ?></button>
                     <div class="cancel-comment"><?php $comments->cancelReply(); ?></div>
                 </div>
             </form>
         <?php endif; ?>
     </div>
     <?php if ($comments->have()): ?>
-        <h2><?php $this->commentsNum(_t('暂无评论'), _t('仅有 1 条评论'), _t('已有 %d 条评论')); ?></h2>
+        <h3 class="coms_underline" id="comments">
+            <?php $this->commentsNum(_t('暂无评论'), _t('仅有 <strong>1</strong> 条评论'), _t('已有 <strong>%d</strong> 条评论')); ?>
+        </h3>
         <?php $comments->listComments(); ?>
         <?php $comments->pageNav(); ?>
     <?php endif; ?>

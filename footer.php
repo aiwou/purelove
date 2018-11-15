@@ -62,11 +62,11 @@
 <!--JQ-->
 <!--<script src="--><?php //$this->options->themeUrl('js/jquery.min.js'); ?><!--"></script>-->
 <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
 <!--<script src="--><?php //$this->options->themeUrl('js/responsiveslides.min.js'); ?><!--"></script>-->
 <script src="//cdn.bootcss.com/ResponsiveSlides.js/1.55/responsiveslides.min.js"></script>
 <!--<script src='--><?php //$this->options->themeUrl('js/highlight.pack.js'); ?><!--'></script>-->
 <script src="//cdn.bootcss.com/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
 <?php if ($this->is('index')):?>
 <!--首页才会显示幻灯片-->
 <script>
@@ -91,14 +91,4 @@
     });
 </script>
 <?php endif;?>
-<script>
-    jQuery(document).ready(function ($) {
-        function d() {
-            document.title = document[b] ? " :( 人呢? 回来" : a
-        }
-
-        var b, c, a = document.title;
-        "undefined" != typeof document.hidden ? (b = "hidden", c = "visibilitychange") : "undefined" != typeof document.mozHidden ? (b = "mozHidden", c = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (b = "webkitHidden", c = "webkitvisibilitychange"), ("undefined" != typeof document.addEventListener || "undefined" != typeof document[b]) && document.addEventListener(c, d, !1)
-    });
-</script>
 <?php $this->footer(); ?>
