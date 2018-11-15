@@ -42,9 +42,6 @@
                     <img  src="<?php $this->options->logoUrl ? $this->options->logoUrl() : $this->options->themeUrl('images/logo-160x60.png'); ?>" alt="<?php $this->options->title() ?>">
                 </a>
             </div>
-            <div class="navpic">
-                <img src="<?php $this->options->themeUrl('images/happy2018.png'); ?>" alt="Happy2018">
-            </div>
         </div>
     </div>
 </header>
@@ -54,7 +51,7 @@
         <div id="menus" class="mynav">
             <div class="menu-menu-container">
                 <ul id="menu-menu" class="menu">
-                    <li class="<?php $this->is('index') ? 'current-menu-item' : '' ?>">
+                    <li class="<?php echo $this->is('index') ? 'current-menu' : '' ?>">
                         <a href=<?php $this->options->siteUrl(); ?>><i class="fa fa-home"></i> <?php _e('首页'); ?></a>
                     </li>
                     <!--分类-->
@@ -75,7 +72,7 @@
                     <!--独立的页面-->
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while($pages->next()): ?>
-                    <li class="<?php $this->is('page', $pages->slug) ? 'current-menu-item' : ''; ?>">
+                    <li class="<?php echo $this->is('page', $pages->slug) ? 'current-menu' : ''; ?>">
                         <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><i class="fa fa-align-left"></i> <?php $pages->title(); ?></a>
                     </li>
                     <?php endwhile; ?>

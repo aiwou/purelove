@@ -2649,3 +2649,7 @@ span.myinfo_pic {
 #navbar #caption img {
     width: 160px;
 }
+
+#menus .current-menu a {
+    color: #ff8c83;
+}
