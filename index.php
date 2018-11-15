@@ -17,8 +17,8 @@ $this->need('header.php');
         <?php if ($this->is('index')):?>
             <div class="mySliderBar">
                 <ul class="rslides" id="slider">
-                    <li><img src='<?php $this->options->themeUrl('images/tmp68686407_p0.jpg'); ?>'></li>
-                    <li><img src='<?php $this->options->themeUrl('images/tmp68577569_p0_master1200.jpg'); ?>'></li>
+                    <li><img src='<?php $this->options->themeUrl('images/banner1.jpg'); ?>'></li>
+                    <li><img src='<?php $this->options->themeUrl('images/banner2.jpg'); ?>'></li>
                 </ul>
             </div>
         <?php else:?>
@@ -56,7 +56,7 @@ $this->need('header.php');
                 <div class="postspicbox">
                     <div class="thumbnail">
                         <a href="<?php $this->permalink() ?>" title="<?php $this->title(); ?>">
-                            <img src="<?php $this->options->themeUrl('images/tmpd146bc003ca994b28015b2c81b36c40e-140-100.jpg'); ?>"
+                            <img src="<?php $this->options->themeUrl('images/articleImg.jpg'); ?>"
                                  alt="<?php $this->excerpt(160); ?>">
                         </a>
                     </div>
