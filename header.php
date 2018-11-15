@@ -20,7 +20,7 @@
     <!--样式-->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
     <!--icon-->
-    <!--<link rel="icon" href="https://www.azimiao.com/wp-content/themes/purelove/favicon.ico" type="image/x-icon"/>-->
+    <link rel="icon" href="<?php $this->options->iconUrl ? $this->options->iconUrl() : $this->options->themeUrl('images/favicon.ico'); ?>" type="image/x-icon"/>
     <!--图标库-->
     <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -38,21 +38,9 @@
     <div id="navbar">
         <div class="inner clearfix">
             <div id="caption">
-                <?php if ($this->options->logoUrl): ?>
-                    <div id="title">
-                        <a href="<?php $this->options->siteUrl(); ?>">
-                            <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>">
-                        </a>
-                    </div>
-                    <div id="tagline" style="color:#ff8c83;padding:0"><?php $this->options->description() ?></div>
-                <?php else: ?>
-                    <div id="title">
-                        <a href="#">
-                            <img src="#" alt="<?php _e('暂无Logo'); ?>">
-                        </a>
-                    </div>
-                    <div id="tagline" style="color:#ff8c83;padding:0"><?php _e('暂无描述'); ?></div>
-                <?php endif; ?>
+                <a href="<?php $this->options->siteUrl(); ?>">
+                    <img  src="<?php $this->options->logoUrl ? $this->options->logoUrl() : $this->options->themeUrl('images/logo-160x60.png'); ?>" alt="<?php $this->options->title() ?>">
+                </a>
             </div>
             <div class="navpic">
                 <img src="<?php $this->options->themeUrl('images/happy2018.png'); ?>" alt="Happy2018">
