@@ -1,5 +1,4 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?></article><!-- article -->
-</section><!-- #container -->
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <span class="clearfix"></span>
 <div id="bak_top"></div>
 </div>
@@ -55,9 +54,7 @@
                     <a href="//creativecommons.org/licenses/by-nc-sa/3.0/cn/legalcode" target="_blank">
                         <i class="fa fa-cc"></i>
                     </a>
-                    <a href="http://typecho.org/" rel="external" target="_blank">
-                        Powered by Typecho
-                    </a>
+                    <a href="http://typecho.org/" rel="external" target="_blank">Powered by Typecho</a>
                 </span>
             </div>
         </div>
@@ -90,4 +87,15 @@
 </script>
 <?php endif;?>
 <script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
+
+<?php if ($this->options->tongJiJs): ?>
+<script>
+    try {
+        <?php $this->options->tongJiJs(); ?>
+    } catch (e) {
+        console.log("统计代码出错!");
+    }
+</script>
+<?php endif; ?>
+
 <?php $this->footer(); ?>

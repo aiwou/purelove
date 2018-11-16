@@ -41,6 +41,9 @@ function themeConfig($form)
 
     $selfIntroduction = new Typecho_Widget_Helper_Form_Element_Textarea('selfIntroduction', null, null, _t('我的介绍'), _t('页脚的我的介绍, 允许使用html标签'));
     $form->addInput($selfIntroduction);
+
+    $tongJiJs = new Typecho_Widget_Helper_Form_Element_Textarea('tongJiJs', null, null, _t('网站统计Js代码'), _t('直接填入统计代码即可'));
+    $form->addInput($tongJiJs);
 }
 
 /**
