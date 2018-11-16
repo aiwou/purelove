@@ -90,16 +90,23 @@
 </script>
 <?php endif;?>
 <script>
-    var options = {
-        container: '#content',
-        fragment: '#content',
-        timeout: 8000
-    };
-    $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', options).on('pjax:send', function () {
-        NProgress.start(); // 加载动画效果开始
-    }).on('pjax:complete', function () {
-        NProgress.done(); // 加载动画效果结束
-        hljs.initHighlightingOnLoad();
+    $(function () {
+        var options = {
+            container: '#content',
+            fragment: '#content',
+            timeout: 8000
+        };
+        $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', options);
+        var siteUrl = "<?php Helper::options()->siteUrl()?>";
+        console.log(siteUrl);
+        $('a[href^="<?php Helper::options()->siteUrl()?>"]').each(function (k, item) {
+            console.log(item);
+            /*var href = $(item).attr("href");
+            if (-1 == href.indexOf(siteUrl)) {
+                $(item).attr("target", "_blank");
+                console.log(href);
+            }*/
+        });
     });
 </script>
 <?php if ($this->options->tongJiJs): ?>

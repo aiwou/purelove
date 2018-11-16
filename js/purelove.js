@@ -70,6 +70,16 @@ jQuery(document).ready(function ($) {
 
     // 代码高亮
     hljs.initHighlightingOnLoad();
+
+    // NProgress.configure({ parent: '#container' });
+    $(document).on('pjax:send', function () {
+        NProgress.start(); // 加载动画效果开始
+    });
+    $(document).on('pjax:complete', function () {
+        NProgress.done(); // 加载动画效果结束
+        hljs.initHighlightingOnLoad();
+        console.log('ok');
+    });
 });
 
 
