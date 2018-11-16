@@ -23,9 +23,8 @@
     <link rel="icon" href="<?php $this->options->iconUrl ? $this->options->iconUrl() : $this->options->themeUrl('images/favicon.ico'); ?>" type="image/x-icon"/>
     <!--图标库-->
     <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <link rel='stylesheet' id='pure-highlightjs-style-css' href='<?php $this->options->themeUrl('css/tomorrow.css'); ?>' type='text/css' media='all'/>
-    <link rel='stylesheet' id='pure-highlightjs-css-css' href='<?php $this->options->themeUrl('css/pure-highlight.css'); ?>' type='text/css' media='all'/>
+    <!--代码高亮-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs.min.css">
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
 </head>

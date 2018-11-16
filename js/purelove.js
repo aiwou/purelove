@@ -67,6 +67,9 @@ jQuery(document).ready(function ($) {
 
     var b, c, a = document.title;
     "undefined" != typeof document.hidden ? (b = "hidden", c = "visibilitychange") : "undefined" != typeof document.mozHidden ? (b = "mozHidden", c = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (b = "webkitHidden", c = "webkitvisibilitychange"), ("undefined" != typeof document.addEventListener || "undefined" != typeof document[b]) && document.addEventListener(c, d, !1)
+
+    // 代码高亮
+    hljs.initHighlightingOnLoad();
 });
 
 
