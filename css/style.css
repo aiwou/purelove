@@ -359,7 +359,6 @@ a:hover {
     width: 36px;
     height: 114px;
     background: url(../images/gotop.png);
-    _position: absolute;
     bottom: 30%;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
@@ -367,7 +366,7 @@ a:hover {
     -ms-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
     right: 50%;
-    margin-right: -500px;
+    margin-right: -560px;
     position: fixed;
     display: none
 }
@@ -743,13 +742,6 @@ a:hover {
     border: 1px solid #DDD;
     border-bottom: 1px solid #b7b7b7;
     border-radius: 2px
-}
-
-.navpic {
-    float: right;
-    width: 280px;
-    height: 70px;
-    margin: 10px 5px 0 0;
 }
 
 .sns {
@@ -2274,7 +2266,7 @@ span.kcomtime {
         margin-right: auto
     }
 
-    .sidebar, .navfeed, .navsearch, .postspicbox, .breadcrumb, .article_other, .poststags, #related, .footer, .navpic, #bak_top {
+    .sidebar, .navfeed, .navsearch, .postspicbox, .breadcrumb, .article_other, .poststags, #related, .site-info, .footer, #bak_top {
         display: none
     }
 
@@ -2652,4 +2644,50 @@ span.myinfo_pic {
 
 #menus .current-menu a {
     color: #ff8c83;
+}
+
+pre, code {
+    background: #F3F3F3;
+    font-family: Menlo,Monaco,Consolas,"Lucida Console","Courier New",monospace;
+    font-size: .92857em;
+}
+pre {
+    padding: 8px;
+    overflow: auto;
+    max-height: 400px;
+}
+pre code {
+    padding: 3px;
+    color: #444;
+}
+
+
+#navbar .site-info {
+    text-align: center;
+    float: right;
+    width: 280px;
+    height: 70px;
+    margin: 20px 5px 0 0;
+}
+
+#navbar .site-info p {
+    margin: 8px;
+}
+#navbar .site-info .title {
+    text-align: left;
+    font-size: 22px;
+}
+#navbar .site-info .description {
+    text-align: right;
+}
+#content #heart {
+    margin-top: 10px;
+}
+#tag-cloud {
+    padding: 0 12px;
+}
+
+.footer .fotbox {
+    /*width: 50%;*/
+    /*float: left;*/
 }
