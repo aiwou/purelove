@@ -1,11 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <aside class="sidebar">
-    <?php if ($this->options->sidebarBlock && in_array('showSiteInfo', $this->options->sidebarBlock)): ?>
-        <section class="widgetbox">
-            <h3><?php $this->options->title(); ?></h3>
-            <p class="description"><?php $this->options->description() ?></p>
-        </section>
-    <?php endif; ?>
     <?php if ($this->options->sidebarBlock && in_array('showSiteStatistics', $this->options->sidebarBlock)): ?>
         <section class="widgetbox">
             <h3><?php _e('网站统计'); ?></h3>
@@ -20,18 +14,6 @@
             </ul>
         </section>
     <?php endif; ?>
-    <?php if ($this->options->sidebarBlock && in_array('showRecentPosts', $this->options->sidebarBlock)): ?>
-        <section class="widgetbox">
-            <h3><?php _e('最新文章'); ?></h3>
-
-            <div class="textwidget">
-                <ul>
-                    <?php $this->widget('Widget_Contents_Post_Recent')
-                        ->parse('<li><a href="{permalink}" title="{title}">{title}</a></li>'); ?>
-                </ul>
-            </div>
-        </section>
-    <?php endif; ?>
     <?php if ($this->options->sidebarBlock && in_array('showRecentComments', $this->options->sidebarBlock)): ?>
         <section class="widgetbox">
             <h3><?php _e('最近回复'); ?></h3>
@@ -42,6 +24,37 @@
                         <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?>: <?php $comments->excerpt(35, '...'); ?></a></li>
                     <?php endwhile; ?>
                 </ul>
+            </div>
+        </section>
+    <?php endif; ?>
+    <?php if ($this->options->sidebarBlock && in_array('showRecentPosts', $this->options->sidebarBlock)): ?>
+        <section class="widgetbox">
+            <h3><?php _e('最新文章'); ?></h3>
+            <div class="textwidget">
+                <ul>
+                    <?php $this->widget('Widget_Contents_Post_Recent')
+                        ->parse('<li><a href="{permalink}" title="{title}">{title}</a></li>'); ?>
+                </ul>
+            </div>
+        </section>
+    <?php endif; ?>
+
+    <?php if ($this->options->sidebarBlock && in_array('showTagCloud', $this->options->sidebarBlock)): ?>
+        <section class="widgetbox">
+            <h3><?php _e('标签云'); ?></h3>
+            <div class="textwidget">
+                <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0&limit=30')->to($tags); ?>
+                <?php if($tags->have()): ?>
+                    <div id="tag-cloud">
+                        <?php while ($tags->next()): ?>
+                            <a href="<?php $tags->permalink(); ?>" rel="tag" class="size-<?php $tags->split(5, 10, 20, 30); ?>" title="<?php $tags->count(); ?> 个话题">
+                                <?php $tags->name(); ?>
+                            </a>
+                        <?php endwhile; ?>
+                        <?php else: ?>
+                            <li><?php _e('没有任何标签'); ?></li>
+                    </div>
+                <?php endif; ?>
             </div>
         </section>
     <?php endif; ?>
