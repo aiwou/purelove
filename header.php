@@ -25,6 +25,8 @@
     <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!--代码高亮-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs.min.css">
+    <!--nprogress-->
+    <link href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
 </head>

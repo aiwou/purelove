@@ -62,7 +62,7 @@ jQuery(document).ready(function ($) {
     });
 
     function d() {
-        document.title = document[b] ? " :( 人呢? 回来" : a
+        document.title = document[b] ? "人呢? 快回来" : a
     }
 
     var b, c, a = document.title;
