@@ -5,57 +5,60 @@
 </div>
 <footer class="footer">
         <div class="inner clearfix">
-            <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0&limit=30')->to($tags); ?>
-            <?php if($tags->have()): ?>
             <div class="fotbox">
-                <h3>标签云</h3>
-                <?php while ($tags->next()): ?>
-                    <a href="<?php $tags->permalink(); ?>" rel="tag" class="size-<?php $tags->split(5, 10, 20, 30); ?>" title="<?php $tags->count(); ?> 个话题">
-                        <?php $tags->name(); ?>
-                    </a>
-                <?php endwhile; ?>
+                <h3 title="金山词霸 每日一句">每日一句</h3>
+                <p>目标并不一定总是用于去达成的，很多时候它仅仅是为了给你方向感。</p>
+                <p>A goal is not always meant to be reached, and it often serves simply as som...</p>
+            </div>
+            <div class="fotbox">
+                <h3>版权声明</h3>
+                <?php if ($this->options->copyright):?>
+                    <?php $this->options->copyright(); ?>
                 <?php else: ?>
-                    <li><?php _e('没有任何标签'); ?></li>
+                    <p>1.您可自由分发和演绎本站内容，只需保留本站署名且非商业使用(CC BY-NC-SA 3.0 CN)。</p>
+                    <p>2.本站引用资源会尽最大可能标明出处及著作权所有者，但不能保证对所有资源都可声明上述内容。侵权请联络作者。</p>
                 <?php endif; ?>
             </div>
-            <div class="fotbox link">
-                <h3>版权声明</h3>
-                1.您可自由分发和演绎本站内容，只需保留本站署名且非商业使用(CC BY-NC-SA 3.0 CN)。<br/>
-                2.本站引用资源会尽最大可能标明出处及著作权所有者，但不能保证对所有资源都可声明上述内容。侵权请联络XXX<br/></div>
             <div class="fotbox2">
                 <h3>我的介绍</h3>
-                <p>·野兔，男，天秤座。<span class='myinfo_pic'><a href='http://music.163.com/#/user/home?id=42209280'
-                                                         target='_blank'><span
-                                    class='fa fa-home' title='网易云音乐'></span></a><a
-                                href='http://steamcommunity.com/id/yetui' target='_blank'><span
-                                    class='fa fa-home' title='Steam'></span></a><a
-                                href='http://sighttp.qq.com/authd?IDKEY=5929de917711dbd2c7605f448208620a72f5a7a4af81f532'
-                                target='_blank'><span class='fa fa-home' title='腾讯QQ'></span></a><a
-                                href='mailto:admin@azimiao.com'><span class='fa fa-home'
-                                                                      title='发送邮件'></span></a><span
-                                class='fa fa-home' title='占位置'></span></span></p>
-                <p>·轻微中二病患者，白学学者与棒棒伲购美病研究人员。</p>
-                <p>·泡茶，曲奇，散步，野游，微醉。</p>
-                <p>·摄影门外汉，北漂酷码农。</p>
-                <p>·梓喵出没名称的由来：<a href='//www.azimiao.com/li-shi-de-jin-cheng'>梓喵出没编年史</a></p></div>
+                <?php if ($this->options->selfIntroduction): ?>
+                    <?php $this->options->selfIntroduction(); ?>
+                <?php else: ?>
+                    <p>
+                        <span>· Hoe，男，后端开发</span>
+                        <span class='myinfo_pic'>
+                            <a href="https://github.com/HoeXHe" target='_blank'><i class='fa fa-github' title='github'></i></a>
+                            <a href="https://gitee.com/HoeXhe" target='_blank'><i class='fa fa-git' title='gitee'></i></a>
+                            <a href='mailto:i@hoehub.com'><i class='fa fa-envelope-o' title='i@hoehub.com'></i></a>
+                        </span>
+                    </p>
+                    <p>· BUG制造者 爱打羽毛球</p>
+                    <p>· 我每天都在思考如何把脑子里的钱存入银行</p>
+                    <p>· 采得百花成蜜后，为谁辛苦为谁甜。—— 罗隐《蜂》</p>
+                <?php endif; ?>
+            </div>
         </div>
         <div class="copry clearfix">
             <div class="maxt">
-            <span id="mt">
-                <a href="//cn.wordpress.org" rel="external" target="_blank">
-                    <i class="fa fa-ravelry"></i>
-                </a>
-                <a href="//creativecommons.org/licenses/by-nc-sa/3.0/cn/legalcode" target="_blank">
-                    <i class="fa fa-cc"></i>
-                </a>
-                Theme Purelove by <a href="//www.azimiao.com/purelovethemes" target="_blank">梦月酱</a>
-            </span>
                 <div id="copyright">
-                    <i class="fa fa-copyright"></i>
-                    2014-2018 梓喵出没 | <a href="//www.azimiao.com/sitemap.html"target="_blank">[网站地图]</a> |
-                    <a href="http://www.miitbeian.gov.cn/" TARGET="_BLANK">冀ICP备15008710号</a>
-                    <a href="http://www.miitbeian.gov.cn/" TARGET="_BLANK">冀ICP备15008710号</a>
+                    <a href="<?php $this->options->siteUrl(); ?>">
+                        <i class="fa fa-copyright"></i>
+                        <?php echo date('Y');?>
+                        <?php $this->options->title(); ?>
+                        All rights reserved.
+                    </a>
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank">
+                        <?php echo $this->options->beiAnCode ? $this->options->beiAnCode() : '桂ICP备16007901号-1'?>
+                    </a>
                 </div>
+                <span id="mt">
+                    <a href="//creativecommons.org/licenses/by-nc-sa/3.0/cn/legalcode" target="_blank">
+                        <i class="fa fa-cc"></i>
+                    </a>
+                    <a href="http://typecho.org/" rel="external" target="_blank">
+                        Powered by Typecho
+                    </a>
+                </span>
             </div>
         </div>
     </footer>

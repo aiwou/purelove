@@ -42,6 +42,12 @@
                     <img  src="<?php $this->options->logoUrl ? $this->options->logoUrl() : $this->options->themeUrl('images/logo-160x60.png'); ?>" alt="<?php $this->options->title() ?>">
                 </a>
             </div>
+            <?php if ($this->options->sidebarBlock && in_array('showSiteInfo', $this->options->sidebarBlock)): ?>
+                <div class="site-info">
+                    <p class="title"><?php $this->options->title(); ?></p>
+                    <p class="description"><?php $this->options->description() ?></p>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </header>

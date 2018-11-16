@@ -5,14 +5,22 @@ function themeConfig($form)
 {
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点Logo地址'), _t('左上角的Logo 建议尺寸160*60'));
     $form->addInput($logoUrl);
+
     $iconUrl = new Typecho_Widget_Helper_Form_Element_Text('iconUrl', NULL, NULL, _t('站点Icon地址'), _t('网站Icon 建议尺寸32*32'));
     $form->addInput($iconUrl);
+
+    $startAt = new Typecho_Widget_Helper_Form_Element_Text('startAt', NULL, NULL, _t('建站时间'), _t('显示本站运行时间 格式: 2018-11-16 11:28:27'));
+    $form->addInput($startAt);
+
+    $beiAnCode = new Typecho_Widget_Helper_Form_Element_Text('beiAnCode', NULL, NULL, _t('备案号'), _t('页脚备案号'));
+    $form->addInput($beiAnCode);
 
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock',
         [
             'showSiteInfo' => _t('显示网站信息'),
             'showSiteStatistics' => _t('显示网站统计'),
             'showRecentPosts' => _t('显示最新文章'),
+            'showTagCloud' => _t('显示标签云'),
             'showRecentComments' => _t('显示最近回复'),
             'showArchive' => _t('显示归档'),
             'showOther' => _t('显示其它杂项')
@@ -21,11 +29,18 @@ function themeConfig($form)
             'showSiteInfo',
             'showSiteStatistics',
             'showRecentPosts',
+            'showTagCloud',
             'showRecentComments',
             'showArchive',
             'showOther',
         ], _t('侧边栏显示'));
     $form->addInput($sidebarBlock->multiMode());
+
+    $copyright = new Typecho_Widget_Helper_Form_Element_Textarea('copyright', null, null, _t('版权声明'), _t('页脚的版权声明, 允许使用html标签'));
+    $form->addInput($copyright);
+
+    $selfIntroduction = new Typecho_Widget_Helper_Form_Element_Textarea('selfIntroduction', null, null, _t('我的介绍'), _t('页脚的我的介绍, 允许使用html标签'));
+    $form->addInput($selfIntroduction);
 }
 
 /**
