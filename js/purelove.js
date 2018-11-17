@@ -71,7 +71,6 @@ jQuery(document).ready(function ($) {
     // 代码高亮
     hljs.initHighlightingOnLoad();
 
-    // NProgress.configure({ parent: '#container' });
     $(document).on('pjax:send', function () {
         NProgress.start(); // 加载动画效果开始
     });
@@ -80,10 +79,19 @@ jQuery(document).ready(function ($) {
         hljs.initHighlightingOnLoad();
         console.log('ok');
     });
+
+    $(document).on('submit', 'form[data-pjax]', function(event) {
+        $.pjax.submit(event, '#content', {
+            fragment:'#content',
+            timeout:8000,
+        });
+    });
+
+
 });
 
 
 window.onscroll = function () {
     document.documentElement.scrollTop + document.body.scrollTop > 100 ? document.getElementById("bak_top").style.display = "block" :
         document.getElementById("bak_top").style.display = "none";
-}
+};
