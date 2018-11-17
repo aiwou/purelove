@@ -50,6 +50,7 @@
                 </a>
             </div>
             <span id="mt">
+                <span id="duration"></span>
                 <a href="//creativecommons.org/licenses/by-nc-sa/3.0/cn/legalcode" target="_blank">
                     <i class="fa fa-cc"></i>
                 </a>
@@ -106,6 +107,8 @@
         $("footer " + selector).each(function (key, item) {
             $(item).attr('target', '_blank');
         });
+
+        blog_time("<?php echo $this->options->startAt ?: '10/01/2016 08:00:00'; ?>");
     });
 </script>
 <?php if ($this->options->tongJiJs): ?>
