@@ -8,9 +8,9 @@
                 <li><?php _e('文章总数：'); ?><?php $stat->publishedPostsNum() ?></li>
                 <li><?php _e('分类总数：'); ?><?php $stat->categoriesNum() ?></li>
                 <li><?php _e('评论总数：'); ?><?php $stat->publishedCommentsNum() ?></li>
-                <li><?php _e('页面总数：'); ?><?php $stat->publishedPagesNum() ?></li>
-                <li><?php _e('标签总数：'); ?>X</li>
-                <li><?php _e('网站运行：'); ?>X</li>
+                <li><?php _e('页面总数：'); ?><?php echo $stat->publishedPagesNum + $stat->publishedPostsNum; ?></li>
+                <li><?php _e('标签总数：'); ?><?php echo getTagCount();?></li>
+                <li><?php _e('占个位子：6666'); ?></li>
             </ul>
         </section>
     <?php endif; ?>
@@ -47,7 +47,7 @@
                 <?php if($tags->have()): ?>
                     <div id="tag-cloud">
                         <?php while ($tags->next()): ?>
-                            <a href="<?php $tags->permalink(); ?>" rel="tag" class="size-<?php $tags->split(5, 10, 20, 30); ?>" title="<?php $tags->count(); ?> 个话题">
+                            <a href="<?php $tags->permalink(); ?>" rel="tag" class="size-<?php $tags->split(5, 10, 20, 30); ?>" title="<?php $tags->count() . _e('个话题'); ?> ">
                                 <?php $tags->name(); ?>
                             </a>
                         <?php endwhile; ?>

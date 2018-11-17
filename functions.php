@@ -9,7 +9,7 @@ function themeConfig($form)
     $iconUrl = new Typecho_Widget_Helper_Form_Element_Text('iconUrl', NULL, NULL, _t('站点Icon地址'), _t('网站Icon 建议尺寸32*32'));
     $form->addInput($iconUrl);
 
-    $startAt = new Typecho_Widget_Helper_Form_Element_Text('startAt', NULL, NULL, _t('建站时间'), _t('显示本站运行时间 格式: 2018-11-16 11:28:27'));
+    $startAt = new Typecho_Widget_Helper_Form_Element_Text('startAt', NULL, NULL, _t('建站时间'), _t('显示本站运行时间 格式: 10/01/2016 08:00:00 兼容Safari浏览器'));
     $form->addInput($startAt);
 
     $beiAnCode = new Typecho_Widget_Helper_Form_Element_Text('beiAnCode', NULL, NULL, _t('备案号'), _t('页脚备案号'));
@@ -94,4 +94,19 @@ function getOS($agent)
         $osIcon = '<i class="fa fa-laptop"></i>';
     }
     return $osIcon;
+}
+
+/**
+ * @return int
+ * @throws Typecho_Db_Exception
+ * 查询标签总数
+ */
+function getTagCount()
+{
+    $db = Typecho_Db::get();
+    $widget = new Widget_Metas_Tag_Cloud(new Typecho_Request(), new Typecho_Response());
+    // 查询
+    $select = $widget->select()->where('type = ?', 'tag');
+    $tags = $db->fetchAll($select, [$widget, 'push']); // 获取上级评论对象
+    return count($tags);
 }
