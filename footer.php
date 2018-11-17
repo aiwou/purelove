@@ -96,16 +96,15 @@
             fragment: '#content',
             timeout: 8000
         };
+        // Pjax
         $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', options);
-        var siteUrl = "<?php Helper::options()->siteUrl()?>";
-        console.log(siteUrl);
-        $('a[href^="<?php Helper::options()->siteUrl()?>"]').each(function (k, item) {
-            console.log(item);
-            /*var href = $(item).attr("href");
-            if (-1 == href.indexOf(siteUrl)) {
-                $(item).attr("target", "_blank");
-                console.log(href);
-            }*/
+        // 从新窗口打开不是本站的链接
+        var selector = 'a[href]:not(a[href="#"], a[href^="javascript"], a[href^="mailto"], a[href^="<?php Helper::options()->siteUrl()?>"])';
+        $("#article " + selector).each(function (key, item) {
+            $(item).attr('target', '_blank');
+        });
+        $("footer " + selector).each(function (key, item) {
+            $(item).attr('target', '_blank');
         });
     });
 </script>
