@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="navsearch">
-            <form action="<?php $this->options->siteUrl(); ?>" method="get" id="searchform">
+            <form action="<?php $this->options->siteUrl(); ?>" method="get" id="searchform" data-pjax>
                 <input name="s" type="text" class="searchtext" value="" placeholder="<?php _e('输入关键字搜索'); ?>"/>
                 <input id="searchbtn" type="submit" class="button" value="<?php _e('搜索'); ?>">
             </form>
