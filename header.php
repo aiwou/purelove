@@ -58,7 +58,7 @@
         <div id="menus" class="mynav">
             <div class="menu-menu-container">
                 <ul id="menu-menu" class="menu">
-                    <li class="<?php echo $this->is('index') ? 'current-menu' : '' ?>">
+                    <li>
                         <a href=<?php $this->options->siteUrl(); ?>><i class="fa fa-home"></i> <?php _e('首页'); ?></a>
                     </li>
                     <!--分类-->
@@ -79,7 +79,7 @@
                     <!--独立的页面-->
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while($pages->next()): ?>
-                    <li class="<?php echo $this->is('page', $pages->slug) ? 'current-menu' : ''; ?>">
+                    <li>
                         <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><i class="fa fa-align-left"></i> <?php $pages->title(); ?></a>
                     </li>
                     <?php endwhile; ?>
