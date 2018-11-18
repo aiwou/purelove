@@ -91,6 +91,15 @@
 </script>
 <?php endif;?>
 <script>
+    function openNew () { // 从新窗口打开不是本站的链接
+        var selector = 'a[href]:not(a[href="#"], a[href^="javascript"], a[href^="mailto"], a[href^="<?php Helper::options()->siteUrl()?>"])';
+        $("#article " + selector).each(function (key, item) {
+            $(item).attr('target', '_blank');
+        });
+        $("footer " + selector).each(function (key, item) {
+            $(item).attr('target', '_blank');
+        });
+    }
     $(function () {
         var options = {
             container: '#content',
@@ -99,16 +108,8 @@
         };
         // Pjax
         $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', options);
-        // 从新窗口打开不是本站的链接
-        var selector = 'a[href]:not(a[href="#"], a[href^="javascript"], a[href^="mailto"], a[href^="<?php Helper::options()->siteUrl()?>"])';
-        $("#article " + selector).each(function (key, item) {
-            $(item).attr('target', '_blank');
-        });
-        $("footer " + selector).each(function (key, item) {
-            $(item).attr('target', '_blank');
-        });
-
-        blog_time("<?php echo $this->options->startAt ?: '10/01/2016 08:00:00'; ?>");
+        durationTime("<?php echo $this->options->startAt ?: '10/01/2016 08:00:00'; ?>");
+        openNew();
     });
 </script>
 <?php if ($this->options->tongJiJs): ?>

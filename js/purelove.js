@@ -70,9 +70,7 @@ jQuery(document).ready(function ($) {
         NProgress.start(); // 加载动画效果开始
     });
     $(document).on('pjax:complete', function () {
-        NProgress.done(); // 加载动画效果结束
-        hljs.initHighlightingOnLoad();
-        console.log('ok');
+        pjaxComplete();
     });
 
     $(document).on('submit', 'form[data-pjax]', function (event) {
@@ -85,6 +83,12 @@ jQuery(document).ready(function ($) {
 
 });
 
+function pjaxComplete() {
+    NProgress.done(); // 加载动画效果结束
+    hljs.initHighlightingOnLoad();
+    console.log('pjax:complete');
+    openNew();
+}
 
 window.onscroll = function () {
     document.documentElement.scrollTop + document.body.scrollTop > 100 ? document.getElementById("bak_top").style.display = "block" :
@@ -94,9 +98,10 @@ window.onscroll = function () {
 
 // 本站运行时长
 var startAt;
-function blog_time(at) {
+
+function durationTime(at) {
     startAt = at;
-    window.setTimeout("blog_time(startAt)", 1000);
+    window.setTimeout("durationTime(startAt)", 1000);
     var BirthDay = new Date(at); // 建站日期
     var today = new Date();
     var timeold = (today.getTime() - BirthDay.getTime());
