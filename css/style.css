@@ -2691,3 +2691,9 @@ pre code {
     /*width: 50%;*/
     /*float: left;*/
 }
+
+#content .archive-title {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 12px;
+}

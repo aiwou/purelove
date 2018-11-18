@@ -56,11 +56,6 @@ jQuery(document).ready(function ($) {
             jQuery(this).fadeTo("fast", 1);
         });
 
-    jQuery('h2 a').click(function () {
-        jQuery(this).text(' 正在载入本文...');
-        window.location = jQuery(this).attr('href');
-    });
-
     function d() {
         document.title = document[b] ? "人呢? 快回来" : a
     }
