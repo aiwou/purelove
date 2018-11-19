@@ -16,7 +16,7 @@ function themeConfig($form)
     {"imgUrl": "https://www.hoehub.com/banner2.png", "url": "http://www.baidu.com", "desc": "描述2"},
     {"imgUrl": "https://www.hoehub.com/banner3.png", "url": "http://www.baidu.com", "desc": "描述3"}
 ] </pre>');
-    $banners = new Typecho_Widget_Helper_Form_Element_Textarea('banners', null, null, _t('首页轮播'), $description);
+    $banners = new Typecho_Widget_Helper_Form_Element_Textarea('banners', null, null, _t('首页轮播 图片建议尺寸700*250'), $description);
     $form->addInput($banners);
 
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock',
@@ -119,4 +119,13 @@ function getTagCount()
     $select = $widget->select()->where('type = ?', 'tag');
     $tags = $db->fetchAll($select, [$widget, 'push']); // 获取上级评论对象
     return count($tags);
+}
+
+/**
+ * @param $archive
+ * 关闭反垃圾机制 否则Pjax无法提交评论
+ */
+function themeInit($archive)
+{
+    Helper::options()->commentsAntiSpam = false;
 }
