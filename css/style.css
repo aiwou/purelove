@@ -894,7 +894,7 @@ a:hover {
 }
 
 .postscontent {
-    /*padding-left: 170px*/
+    text-indent: 2em;
 }
 
 .poststags {
@@ -1924,27 +1924,16 @@ span.kcomtime {
     text-shadow: none
 }
 
-.fuck404 {
+.OMG404 {
     text-align: center;
     margin: 86px 0
 }
 
-.fuck404 h2 {
+.OMG404 h2 {
     font-size: 36px;
-    margin: 30px 0;
     line-height: 34px;
-    color: #9f9fb9;
+    color: #888888;
     font-weight: 700
-}
-
-.sonofbitch {
-    margin: 80px;
-    font-size: 19px;
-    padding: 10px
-}
-
-.sonofbitch P {
-    margin: 10px
 }
 
 #related ul {
