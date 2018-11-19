@@ -14,14 +14,29 @@ $this->need('header.php');
 <!--主体部分-->
 <section id="container">
     <section id="content">
-        <?php if ($this->is('index')):?>
+        <?php if ($this->is('index')): // 首页才会显示轮播图 ?>
             <div class="mySliderBar">
                 <ul class="rslides" id="slider">
-                    <li><img src='<?php $this->options->themeUrl('images/banner1.jpg'); ?>'></li>
-                    <li><img src='<?php $this->options->themeUrl('images/banner2.jpg'); ?>'></li>
+                    <?php if ($this->options->banners): ?>
+                        <?php foreach (json_decode($this->options->banners) as $banner): ?>
+                            <li>
+                                <img src="<?php echo $banner->imgUrl; ?>" alt="" title="<?php echo $banner->desc; ?>">
+                                <a href="<?php echo $banner->url; ?>"><?php echo $banner->desc; ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <li>
+                            <img src='<?php $this->options->themeUrl('images/banner1.jpg'); ?>' title="11">
+                            <a href="">111</a>
+                        </li>
+                        <li>
+                            <img src='<?php $this->options->themeUrl('images/banner2.jpg'); ?>' title="22">
+                            <a href="">222</a>
+                        </li>
+                    <?php endif;?>
                 </ul>
             </div>
-        <?php else:?>
+        <?php else: // 不是首页 ?>
             <h3 class="archive-title">
                 <?php $this->archiveTitle(array(
                     'category'  =>  _t('分类【%s】下的文章'),
@@ -30,7 +45,7 @@ $this->need('header.php');
                     'author'    =>  _t('【%s】发布的文章')
                 ), '', ''); ?>
             </h3>
-        <?php endif;?>
+        <?php endif; // end $this->is('index') ?>
         <?php while ($this->next()): ?>
             <article class="posts" itemscope itemtype="http://schema.org/BlogPosting">
                 <div class="label">

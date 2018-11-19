@@ -1455,21 +1455,6 @@ span.kcomtime {
     height: 32px
 }
 
-.coms_floor {
-    float: right;
-    color: #eee;
-    font-family: verdana;
-    font-size: 30px
-}
-
-.coms_floor a {
-    color: #ddd
-}
-
-.coms_floor a:hover {
-    color: #666
-}
-
 .coms_approved {
     color: #d15221;
     display: inline-block;
@@ -2696,4 +2681,19 @@ pre code {
     text-align: center;
     font-size: 20px;
     margin-bottom: 12px;
+}
+#slider a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #666\9;
 }

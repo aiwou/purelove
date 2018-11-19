@@ -23,7 +23,6 @@
     echo $commentClass;
     ?>">
         <div id="<?php $comments->theId(); ?>">
-            <!--<div class="coms_floor"><a href="#comment-2573">xx楼</a></div>-->
             <div class="coms_avatar"><?php $comments->gravatar('40', ''); ?></div>
             <div class="coms_main">
                 <div class="coms_meta">
