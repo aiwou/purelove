@@ -85,8 +85,10 @@ jQuery(document).ready(function ($) {
 
 function pjaxComplete() {
     NProgress.done(); // 加载动画效果结束
-    hljs.initHighlightingOnLoad();
-    console.log('pjax:complete');
+    // 重新加载代码高亮
+    $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
     openNew();
 }
 
