@@ -71,13 +71,12 @@ $this->need('header.php');
                 <div class="postspicbox">
                     <div class="thumbnail">
                         <a href="<?php $this->permalink() ?>" title="<?php $this->title(); ?>">
-                            <img src="<?php $this->options->themeUrl('images/articleImg.jpg'); ?>"
-                                 alt="<?php $this->excerpt(160); ?>">
+                            <img src="<?php $this->options->themeUrl('images/articleImg.jpg'); ?>" alt="<?php $this->title(); ?>">
                         </a>
                     </div>
                 </div>
                 <div class="postscontent entry-content" itemprop="articleBody">
-                    <?php $this->excerpt(160); ?>
+                    <?php $this->excerpt(180); ?>
                 </div>
             </article>
         <?php endwhile; ?>
