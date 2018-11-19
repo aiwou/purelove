@@ -58,13 +58,21 @@ $this->need('header.php');
                     </a>
                 </h2>
                 <div class="entry-meta">
-                    <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time> /
-                    Write by /
+                    <time datetime="<?php $this->date(); ?>" itemprop="datePublished">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <?php $this->date(); ?>
+                    </time>
                     <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                        <a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a>
+                        <a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author">
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                            <?php $this->author(); ?>
+                        </a>
                     </span>
                     <span itemprop="interactionCount">
-                        <a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('%d评论'); ?></a>
+                        <a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments">
+                            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                            <?php $this->commentsNum('%d'); ?>
+                        </a>
                     </span>
                 </div>
                 <div class="clearfix"></div>
