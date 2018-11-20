@@ -5,8 +5,11 @@
     <div class="inner clearfix">
         <div class="fotbox">
             <h3 title="金山词霸 每日一句">每日一句</h3>
-            <p>目标并不一定总是用于去达成的，很多时候它仅仅是为了给你方向感。</p>
-            <p>A goal is not always meant to be reached, and it often serves simply as som...</p>
+            <div id="daily-sentence">
+                <p>目标并不一定总是用于去达成的，很多时候它仅仅是为了给你方向感。</p>
+                <p>A goal is not always meant to be reached, and it often serves simply as som...</p>
+            </div>
+            <span id="typed"></span>
         </div>
         <div class="fotbox">
             <h3>版权声明</h3>
@@ -63,6 +66,7 @@
 <script src="//cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
 <script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.9/typed.min.js"></script>
 <script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/activate-power-mode.js'); ?>"></script>
 <?php if ($this->is('index')):?>

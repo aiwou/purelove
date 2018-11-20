@@ -61,6 +61,14 @@ jQuery(document).ready(function ($) {
     POWERMODE.colorful = true; // make power mode colorful 颜色
     POWERMODE.shake = true; // turn off shake 振动
     document.body.addEventListener('input', POWERMODE);
+
+    var typed = new Typed('#typed', {
+        stringsElement: '#daily-sentence',
+        typeSpeed: 30,
+        backSpeed: 10,
+        backDelay: 3000,
+        loop: true,
+    });
 });
 
 function pjaxComplete() {
@@ -125,7 +133,7 @@ function banner() {
 }
 
 function codeHighlight() {
-    $('pre code').each(function(i, block) {
+    $('pre code').each(function (i, block) {
         hljs.highlightBlock(block);
     });
 }

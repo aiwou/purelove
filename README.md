@@ -45,10 +45,11 @@
 - `jquery.js` v3.3.1
 - `jquery.pjax.js` v2.0.1
 - 字体图标 `font-awesome.css` v4.7.0
-- 代码高亮 `highlight.js` vs样式 v9.13.1
+- 代码高亮 `highlight.js`使用`vs`样式 v9.13.1
 - 进度条 `nprogress.js` v0.2.0
 - 幻灯片 `responsiveslides.js` v1.55
 - 酷炫编辑器 `activate-power-mode.js` 未知版本
+- 输入动画库 `typed.js` v2.0.9
 
 ### 参与贡献
 
