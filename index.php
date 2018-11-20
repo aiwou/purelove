@@ -2,10 +2,11 @@
 /**
  * PureLoveForTypecho
  *
- * @package PureLoveForTypecho 纯真的爱
+ * @package PureLoveForTypecho
  * @author Hoe
  * @version 1.0.0
- * @link http://www.hoehub.com http://www.wysafe.com http://www.azimiao.com
+ * @link http://www.hoehub.com
+ * @time 2018年11月12日11:51
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;

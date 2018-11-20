@@ -1,6 +1,14 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
+/**
+ * Engine: typecho
+ * Theme Name: PureLoveForTypecho
+ * Time: 2018年11月12日11:51
+ * Author: Hoe
+ * Author URI: http://www.hoehub.com/
+ */
+
 function themeConfig($form)
 {
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', null, null, _t('站点Logo地址'), _t('左上角的Logo 建议尺寸160*60'));
@@ -147,4 +155,16 @@ function articleThumb($article)
         $thumb = $article->widget('Widget_Options')->themeUrl . '/thumb/' . $ran . '.jpg'; // 随机图片
     }
     return $thumb;
+}
+
+/**
+ * 调取金山每日一句
+ * @return array 接口数据
+ */
+function ICIB_API()
+{
+    $date = date('y-m-d');
+    $content = file_get_contents('http://open.iciba.com/dsapi/?date=' . $date);
+    $result = json_decode($content);
+    return $result;
 }

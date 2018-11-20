@@ -1,3 +1,10 @@
+/**
+ * Engine: typecho
+ * Theme Name: PureLoveForTypecho
+ * Time: 2018年11月12日11:51
+ * Author: Hoe
+ * Author URI: http://www.hoehub.com/
+ */
 jQuery(document).ready(function ($) {
     $('#aio_swc span').mouseover(function () {
         $(this).addClass("on").siblings().removeClass();
@@ -163,3 +170,5 @@ function tooltip() {
         }
     })
 }
+
+console.log("\n %c PureLoveForTypecho %c www.hoehub.com Theme By Hoe ", "color:white;background:#ffa099;padding:5px 0;", "color:#ffa099;background:#404040;padding:5px 0;");

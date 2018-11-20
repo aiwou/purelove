@@ -6,8 +6,10 @@
         <div class="fotbox">
             <h3 title="金山词霸 每日一句">每日一句</h3>
             <div id="daily-sentence">
-                <p>目标并不一定总是用于去达成的，很多时候它仅仅是为了给你方向感。</p>
-                <p>A goal is not always meant to be reached, and it often serves simply as som...</p>
+                <?php $ICIB = ICIB_API(); ?>
+                <p><?php echo property_exists($ICIB, 'content') ? $ICIB->content : ''; ?></p>
+                <p><?php echo property_exists($ICIB, 'note') ? $ICIB->note : ''; ?></p>
+                <p><?php echo property_exists($ICIB, 'translation') ? $ICIB->translation : ''; ?></p>
             </div>
             <span id="typed"></span>
         </div>
@@ -72,7 +74,7 @@
 <?php if ($this->is('index')):?>
 <!--首页才会显示幻灯片-->
 <script>
-    jQuery(document).ready(function ($) {
+    $(function () {
         banner();
     });
 </script>
