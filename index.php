@@ -79,7 +79,7 @@ $this->need('header.php');
                 <div class="postspicbox">
                     <div class="thumbnail">
                         <a href="<?php $this->permalink() ?>" title="<?php $this->title(); ?>">
-                            <img src="<?php $this->options->themeUrl('images/articleImg.jpg'); ?>" alt="<?php $this->title(); ?>">
+                            <img src="<?php echo articleThumb($this);?>" alt="<?php $this->title(); ?>">
                         </a>
                     </div>
                 </div>

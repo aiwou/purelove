@@ -129,3 +129,22 @@ function themeInit($archive)
 {
     Helper::options()->commentsAntiSpam = false;
 }
+
+/**
+ * @param $article
+ * @return string
+ * 文章无图时, 随机输出缩略图
+ */
+function articleThumb($article)
+{
+    // 当文章无图片时的默认缩略图
+    $pattern = '/<img[\s\S]*?src\s*=\s*[\"|\'](.*?)[\"|\'][\s\S]*?>/';
+    preg_match_all($pattern, $article->content, $matches);
+    if (isset($matches[1][0])) {
+        $thumb = $matches[1][0];
+    } else {
+        $ran = mt_rand(1, 8);
+        $thumb = $article->widget('Widget_Options')->themeUrl . '/thumb/' . $ran . '.jpg'; // 随机图片
+    }
+    return $thumb;
+}
