@@ -38,21 +38,23 @@
             </div>
 
             <span class="poststags clearfix" itemprop="tags">
-                <?php $this->tags('', true, 'none'); ?>
+                <?php $this->tags('', true); ?>
             </span>
-            <div id="related">
-                <h3 class="coms_underline">你可能也喜欢</h3>
-                <?php $this->related(6)->to($relatedPosts); ?>
-                <ul>
-                    <?php while ($relatedPosts->next()): ?>
-                        <li>
-                            <a href="<?php $relatedPosts->permalink(); ?>" rel="bookmark" title="<?php $relatedPosts->title(); ?>">
-                                <?php $relatedPosts->title(26); ?>
-                            </a>
-                        </li>
-                    <?php endwhile; ?>
-                </ul>
-            </div>
+            <?php $this->related(6)->to($relatedPosts); ?>
+            <?php if ($relatedPosts->have()): ?>
+                <div id="related">
+                    <h3 class="coms_underline">你可能也喜欢</h3>
+                    <ul>
+                        <?php while ($relatedPosts->next()): ?>
+                            <li>
+                                <a href="<?php $relatedPosts->permalink(); ?>" rel="bookmark" title="<?php $relatedPosts->title(); ?>">
+                                    <?php $relatedPosts->title(26); ?>
+                                </a>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
         <?php $this->need('comments.php'); ?>
         </article>
     </section>
