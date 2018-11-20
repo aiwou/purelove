@@ -11,7 +11,7 @@ Tags: blog, 动漫, 萌
 Engine: typecho
 Theme Name: PureLoveForTypecho
 Time: 2018年11月12日11:51
-Version: v1
+Version: 1.0.0
 Author: Hoe
 Author URI: http://www.hoehub.com/
 */
@@ -682,7 +682,6 @@ a:hover {
     height: 32px;
     line-height: 32px;
     text-align: center;
-    font-size: 13px;
     font-family: 微软雅黑, Arial;
     color: #1c1c1c;
     text-shadow: 0 1px 0 #fff;
@@ -1790,13 +1789,9 @@ span.kcomtime {
 
 .footer .copry {
     opacity: .9;
-    width: 100%;
-    border-top: 1px solid rgba(0, 0, 0, 0.2)
-}
-
-.footer .copry .maxt {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
     width: 1000px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 #copyright {
@@ -1807,7 +1802,6 @@ span.kcomtime {
 #mt {
     display: block;
     float: right;
-    width: 320px;
     height: 36px;
     line-height: 36px
 }

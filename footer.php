@@ -37,26 +37,23 @@
         </div>
     </div>
     <div class="copry clearfix">
-        <div class="maxt">
-            <div id="copyright">
-                <a href="<?php $this->options->siteUrl(); ?>">
-                    <i class="fa fa-copyright"></i>
-                    <?php echo date('Y');?>
-                    <?php $this->options->title(); ?>
-                    All rights reserved.
-                </a>
-                <a href="http://www.miitbeian.gov.cn/" target="_blank">
-                    <?php echo $this->options->beiAnCode ? $this->options->beiAnCode() : '桂ICP备16007901号-1'?>
-                </a>
-            </div>
-            <span id="mt">
-                <span id="duration"></span>
-                <a href="//creativecommons.org/licenses/by-nc-sa/3.0/cn/legalcode" target="_blank">
-                    <i class="fa fa-cc"></i>
-                </a>
-                <a href="http://typecho.org/" rel="external" target="_blank">Powered by Typecho</a>
-            </span>
+        <div id="copyright">
+            <i class="fa fa-copyright"></i>
+            <?php echo $this->options->startAt ? date('Y', strtotime($this->options->startAt)) . ' -' : '';?>
+            <?php echo date('Y');?>
+            All rights reserved.
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">
+                <?php echo $this->options->beiAnCode ? $this->options->beiAnCode() : '桂ICP备16007901号-1'?>
+            </a>
         </div>
+        <span id="mt">
+            <span id="duration"></span>
+            <a href="//creativecommons.org/licenses/by-nc-sa/3.0/cn/legalcode" target="_blank">
+                <i class="fa fa-cc"></i>
+            </a>
+            <a href="http://typecho.org/" rel="external" target="_blank">Powered by Typecho</a>
+            <a href="http://www.hoehub.com">Theme By Hoe</a>
+        </span>
     </div>
 </footer>
 </body>
@@ -67,26 +64,12 @@
 <script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/activate-power-mode.js'); ?>"></script>
 <?php if ($this->is('index')):?>
 <!--首页才会显示幻灯片-->
 <script>
     jQuery(document).ready(function ($) {
-        //幻灯片
-        $("#slider").responsiveSlides({
-            auto: true,
-            nav: true,
-            speed: 500,
-            pauseControls: true,
-            pager: true,
-            manualControls: "auto",
-            namespace: "slide"
-        });
-        //幻灯片导航
-        $(".mySliderBar").hover(function () {
-            $(".slide_nav").fadeIn(200)
-        }, function () {
-            $(".slide_nav").fadeOut(200)
-        });
+        banner();
     });
 </script>
 <?php endif;?>

@@ -26,7 +26,7 @@
     <!--代码高亮-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs.min.css">
     <!--nprogress-->
-    <link href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
 </head>
@@ -63,13 +63,13 @@
                     </li>
                     <!--分类-->
                     <li class="menu-item">
-                        <a href="#"><i class="fa fa-pencil-square-o"></i> <?php _e('分类'); ?></a>
+                        <a href="#"><i class="fa fa-list-ul"></i> <?php _e('分类'); ?></a>
                         <ul class="sub-menu">
                             <?php $this->widget('Widget_Metas_Category_List')->to($cats);?>
                             <?php while ($cats->next()): ?>
                                 <li>
                                     <a href="<?php $cats->permalink()?>" title="<?php $cats->name()?>">
-                                        <i class="fa fa-pencil-square-o"></i>
+                                        <i class="fa fa-list-ul"></i>
                                         <span><?php $cats->name()?></span>
                                     </a>
                                 </li>
@@ -80,7 +80,7 @@
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while($pages->next()): ?>
                     <li>
-                        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><i class="fa fa-align-left"></i> <?php $pages->title(); ?></a>
+                        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><i class="fa fa-list-ul"></i> <?php $pages->title(); ?></a>
                     </li>
                     <?php endwhile; ?>
                 </ul>

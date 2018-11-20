@@ -19,29 +19,7 @@ jQuery(document).ready(function ($) {
     document.onclick = hide_submenu;
 
 
-    $("body *").each(function (b) {
-        if (this.title) {
-            var c = this.title;
-            var a = 30;
-            $(this).mouseover(function (d) {
-                this.title = "";
-                $("body").append('<div id="tooltip">' + c + "</div>");
-                $("#tooltip").css({
-                    left: (d.pageX + a) + "px",
-                    top: d.pageY + "px",
-                    opacity: "0.8"
-                }).show(250)
-            }).mouseout(function () {
-                this.title = c;
-                $("#tooltip").remove()
-            }).mousemove(function (d) {
-                $("#tooltip").css({
-                    left: (d.pageX + a) + "px",
-                    top: d.pageY + "px"
-                })
-            })
-        }
-    })
+    tooltip();
 
     jQuery('#bak_top').click(function () {
         jQuery('html,body').animate({scrollTop: '0px'}, 800);
@@ -64,7 +42,7 @@ jQuery(document).ready(function ($) {
     "undefined" != typeof document.hidden ? (b = "hidden", c = "visibilitychange") : "undefined" != typeof document.mozHidden ? (b = "mozHidden", c = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (b = "webkitHidden", c = "webkitvisibilitychange"), ("undefined" != typeof document.addEventListener || "undefined" != typeof document[b]) && document.addEventListener(c, d, !1)
 
     // 代码高亮
-    hljs.initHighlightingOnLoad();
+    codeHighlight();
 
     $(document).on('pjax:send', function () {
         NProgress.start(); // 加载动画效果开始
@@ -79,17 +57,19 @@ jQuery(document).ready(function ($) {
             timeout: 8000,
         });
     });
-
-
+    // input
+    POWERMODE.colorful = true; // make power mode colorful 颜色
+    POWERMODE.shake = true; // turn off shake 振动
+    document.body.addEventListener('input', POWERMODE);
 });
 
 function pjaxComplete() {
     NProgress.done(); // 加载动画效果结束
     // 重新加载代码高亮
-    $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-    });
+    codeHighlight();
     openNew();
+    banner();
+    tooltip();
 }
 
 window.onscroll = function () {
@@ -122,4 +102,56 @@ function durationTime(at) {
         seconds = '0' + seconds;
     }
     duration.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+}
+
+
+function banner() {
+    // 幻灯片
+    $("#slider").responsiveSlides({
+        auto: true,
+        nav: true,
+        speed: 500,
+        pauseControls: true,
+        pager: true,
+        manualControls: "auto",
+        namespace: "slide"
+    });
+    //幻灯片导航
+    $(".mySliderBar").hover(function () {
+        $(".slide_nav").fadeIn(200)
+    }, function () {
+        $(".slide_nav").fadeOut(200)
+    });
+}
+
+function codeHighlight() {
+    $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+}
+
+function tooltip() {
+    $("body *").each(function (b) {
+        if (this.title) {
+            var c = this.title;
+            var a = 30;
+            $(this).mouseover(function (d) {
+                this.title = "";
+                $("body").append('<div id="tooltip">' + c + "</div>");
+                $("#tooltip").css({
+                    left: (d.pageX + a) + "px",
+                    top: d.pageY + "px",
+                    opacity: "0.8"
+                }).show(250)
+            }).mouseout(function () {
+                this.title = c;
+                $("#tooltip").remove()
+            }).mousemove(function (d) {
+                $("#tooltip").css({
+                    left: (d.pageX + a) + "px",
+                    top: d.pageY + "px"
+                })
+            })
+        }
+    })
 }
