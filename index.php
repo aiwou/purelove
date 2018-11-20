@@ -26,12 +26,16 @@ $this->need('header.php');
                         <?php endforeach; ?>
                     <?php else: ?>
                         <li>
-                            <img src='<?php $this->options->themeUrl('images/banner1.jpg'); ?>' title="11">
-                            <a href="">111</a>
+                            <img src='<?php $this->options->themeUrl('images/banner1.jpg'); ?>' title="For you, a thousand times over. 为你，千千万万遍。--《追风筝的人》">
+                            <a href="#">For you, a thousand times over. 为你，千千万万遍。--《追风筝的人》</a>
                         </li>
                         <li>
-                            <img src='<?php $this->options->themeUrl('images/banner2.jpg'); ?>' title="22">
-                            <a href="">222</a>
+                            <img src='<?php $this->options->themeUrl('images/banner2.jpg'); ?>' title="This path has been placed before you. The choice... 路就在你脚下，你自己决定。 —星球大战">
+                            <a href="#">This path has been placed before you. The choice... 路就在你脚下，你自己决定。 —星球大战</a>
+                        </li>
+                        <li>
+                            <img src='<?php $this->options->themeUrl('images/banner3.jpg'); ?>' title='However big the problem, tell your heart," All is well, pal". 无论问题有多大，告诉你的心，“一切皆好，朋友。”—《三傻大闹宝莱坞》'>
+                            <a href="#">However big the problem, tell your heart," All is well, pal". 无论问题有多大，告诉你的心，“一切皆好，朋友。”—《三傻大闹宝莱坞》</a>
                         </li>
                     <?php endif;?>
                 </ul>
