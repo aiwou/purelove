@@ -1,39 +1,58 @@
-# PureLoveForTypecho
+# PureLoveForTypecho简介
 
-#### 项目介绍
-{**以下是码云平台说明，您可以替换为您的项目简介**
-码云是开源中国推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+### `PureLoveForTypecho`演变历程:
 
-#### 软件架构
-软件架构说明
+- `PureLoveForTypecho`前身是`Purelove` (`Wrodpress`主题)
+- `Purelove`主题是[梦月酱](http://www.wysafe.com/)设计的[`Wrodpress`](https://cn.wordpress.org/)主题, 页面设计简洁美观 完美支持移动设备端, 支持响应式, 兼容主流游览器
+- 而本主题是在[`PureLove主题梓喵出没修改版`](https://www.azimiao.com/purelovethemes)基础上再次改版, 使原本是`Wrodpress`的`Purelove`主题能够运行在[`typecho`](http://typecho.org)博客系统上, 如有侵权, 请联系`i#hoehub.com`
 
+### Demo
 
-#### 安装教程
+- [演试地址:www.hoehub.com](http://www.hoehub.com)
+- [主题源码](https://gitee.com/HoeXhe/PureLoveForTypecho)
 
-1. xxxx
-2. xxxx
-3. xxxx
+### Description
 
-#### 使用说明
+- 全站`Pjax` (如遇`javascript error Pjax`失效)
+- 自定义首页轮播图/侧边栏显示/Logo等
+- 代码高亮显示
+- 评论区显示系统及浏览器信息 博主标识
+- 新增归档页面
+- 自动获取文章第一张图片做为缩略图, 如文章无图, 则随机显示8张来自[站酷 (ZCOOL)](http://www.zcool.com.cn)的缩略图
+- 设备小于`860px`时, 侧边栏和页脚会隐藏
+- 页脚调用金山每日一句接口
 
-1. xxxx
-2. xxxx
-3. xxxx
+### Use
 
-#### 参与贡献
+- `git clone https://gitee.com/HoeXhe/PureLoveForTypecho.git`
+- 将主题放入`/usr/themes/`目录下
+- 登录控制台使用和配置外观即可
+
+### Link
+
+- [主题作者梦月酱](http://www.wysafe.com)
+- [梦月酱`PureLove`主题原版](https://www.mywpku.com/purelove.html)
+- [`PureLove`主题梓喵出没修改版](https://www.azimiao.com/purelovethemes)
+
+### Defect
+
+- 小尺寸设备时菜单会被截取而不是缩放
+- 使用`Pjax`提交评论后, 如按`F5`刷新页面会报错
+- 使用`Pjax`提交评论后, 无法再次提交评论
+
+### 类库 [使用BootCDN加速](https://www.bootcdn.cn/)
+
+- `jquery.js` v3.3.1
+- `jquery.pjax.js` v2.0.1
+- 字体图标 `font-awesome.css` v4.7.0
+- 代码高亮 `highlight.js` vs样式 v9.13.1
+- 进度条 `nprogress.js` v0.2.0
+- 幻灯片 `responsiveslides.js` v1.55
+- 酷炫编辑器 `activate-power-mode.js` 未知版本
+
+### 参与贡献
 
 1. Fork 本项目
 2. 新建 Feat_xxx 分支
 3. 提交代码
 4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
