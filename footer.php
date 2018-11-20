@@ -60,7 +60,7 @@
 <!--JQ-->
 <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/ResponsiveSlides.js/1.55/responsiveslides.min.js"></script>
-<script src="//cdn.bootcss.com/highlight.js/9.1.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
 <script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
