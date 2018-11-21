@@ -29,6 +29,7 @@
     <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
+    <!-- End 通过自有函数输出HTML头部信息 -->
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -94,3 +95,8 @@
         </div>
     </div>
 </div>
+<section id="container">
+    <section id="content">
+        <!-- Pjax需要替换window.TypechoComment对象 通过自有函数输出评论JS -->
+        <?php $this->header('commentReply=1&description=0&keywords=0&generator=0&template=0&pingback=0&xmlrpc=0&wlw=0&rss2=0&rss1=0&antiSpam=0&atom'); ?>
+        <!-- End Pjax需要替换window.TypechoComment对象 通过自有函数输出评论JS -->

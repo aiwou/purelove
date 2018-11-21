@@ -7,19 +7,14 @@ $this->need('header.php');
  * @package custom
  */
 ?>
-<section id="container">
-    <section id="content">
-        <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);?>
-        <?php while ($archives->next()): ?>
-            <p>
-                <a href="<?php $archives->permalink() ?>">
-                    <?php echo date('Y-m-d', $archives->created); ?>
-                    <?php $archives->title(); ?>
-                </a>
-            </p>
-        <?php endwhile;?>
-    </section>
-    <?php $this->need('sidebar.php'); ?>
-</section>
+<?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);?>
+<?php while ($archives->next()): ?>
+    <p>
+        <a href="<?php $archives->permalink() ?>">
+            <?php echo date('Y-m-d', $archives->created); ?>
+            <?php $archives->title(); ?>
+        </a>
+    </p>
+<?php endwhile;?>
 <?php $this->need('footer.php');?>
 

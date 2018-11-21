@@ -1,4 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+</section><!-- #content -->
+<?php $this->need('sidebar.php'); ?>
+</section><!-- #container -->
 <span class="clearfix"></span>
 <div id="bak_top"></div>
 <footer class="footer">
