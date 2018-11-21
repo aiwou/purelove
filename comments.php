@@ -81,7 +81,7 @@
                         <input type="url" name="url" id="url" value="<?php $this->remember('url'); ?>" size="36"
                                tabindex="1" <?php echo $this->options->commentsRequireURL ? 'required' : ''; ?>
                                placeholder="<?php _e('http://'); ?>">
-                        <?php echo $this->options->commentsRequireMail ? '<em>*</em>' : ''; ?>
+                        <?php echo $this->options->commentsRequireURL ? '<em>*</em>' : ''; ?>
                     </p>
                 </div>
                 <?php endif; // if($this->user->hasLogin()) endif ?>
