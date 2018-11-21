@@ -4,7 +4,6 @@ $this->need('header.php');
 /**
  * 归档页面
  * @link http://docs.typecho.org/themes/custom-theme#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2_page_%E6%A8%A1%E6%9D%BF
- * @package custom
  */
 ?>
 <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);?>

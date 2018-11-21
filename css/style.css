@@ -1360,7 +1360,6 @@ span.kcomtime {
 .coms_main p img {
     display: block;
     margin-top: .5em;
-    margin-top: .5em;
     max-width: 90%;
 }
 
@@ -2674,4 +2673,8 @@ pre code {
 }
 #heart .fa {
     color: #ff8888;
+}
+
+#commentform #comment {
+    font-family: Michroma, 'Segoe UI Light', 'Segoe UI', 'Segoe UI WP', 'Microsoft Jhenghei', '微软雅黑', sans-serif, Times;
 }

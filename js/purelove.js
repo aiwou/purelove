@@ -171,4 +171,14 @@ function tooltip() {
     })
 }
 
-console.log("\n %c PureLoveForTypecho %c www.hoehub.com Theme By Hoe ", "color:white;background:#ffa099;padding:5px 0;", "color:#ffa099;background:#404040;padding:5px 0;");
+console.log('\n' +
+    '                            *\n' +
+    '                           /.\\\n' +
+    '                          /..\'\\\n' +
+    '                          /\'.\'\\\n' +
+    '                         /.\'\'.\'\\\n' +
+    '                         /.\'.\'.\\\n' +
+    '                  "\'""""/\'.\'\'.\'.\\""\'"\'"\n' +
+    '                        ^^^[_]^^^' +
+    '\n\n ' +
+    '%c PureLoveForTypecho %c www.hoehub.com 😊 Theme By Hoe ', 'color:white;background:#ffa099;padding:5px 0;', 'color:#ffa099;background:#404040;padding:5px 0;');
