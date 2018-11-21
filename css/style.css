@@ -2663,8 +2663,15 @@ pre code {
     font-size: 14px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
-    background-color: #666\9;
+    background-color: #666;
 }
 .postspicbox img {
     height: 100px;
+}
+
+#article .entry-content img {
+    width: 100%;
+}
+#heart .fa {
+    color: #ff8888;
 }

@@ -34,7 +34,7 @@
             <!--广告位-->
             </div>
             <div id="heart" class="center">
-                <img src="<?php $this->options->themeUrl('images/heart.png')?>">
+                <i class="fa fa-heart-o fa-3x" aria-hidden="true"></i>
             </div>
 
             <span class="poststags clearfix" itemprop="tags">

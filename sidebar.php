@@ -10,7 +10,7 @@
                 <li><?php _e('评论总数：'); ?><?php $stat->publishedCommentsNum() ?></li>
                 <li><?php _e('页面总数：'); ?><?php echo $stat->publishedPagesNum + $stat->publishedPostsNum; ?></li>
                 <li><?php _e('标签总数：'); ?><?php echo getTagCount();?></li>
-                <li><?php _e('占个位子：6666'); ?></li>
+                <li><?php _e('占个位子：'); ?><i class="fa fa-heartbeat fa-lg" aria-hidden="true"></i></li>
             </ul>
         </section>
     <?php endif; ?>

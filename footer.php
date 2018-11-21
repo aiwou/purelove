@@ -56,7 +56,7 @@
             <a href="//creativecommons.org/licenses/by-nc-sa/3.0/cn/legalcode" target="_blank">
                 <i class="fa fa-cc"></i>
             </a>
-            <a href="http://typecho.org/" rel="external" target="_blank">Powered by Typecho</a>
+            <a href="http://typecho.org/" rel="external" target="_blank"><i class="fa fa-tumblr-square" aria-hidden="true"></i>Powered by Typecho</a>
             <a href="http://www.hoehub.com">Theme By Hoe</a>
         </span>
     </div>
