@@ -51,7 +51,7 @@
     <?php $this->comments()->to($comments); ?>
     <div class="comments-header" id="<?php $this->respondId(); ?>">
         <?php if ($this->allow('comment')): ?>
-            <form action="<?php $this->commentUrl() ?>" method="post" id="commentform" data-pjax>
+            <form action="<?php $this->commentUrl() ?>" method="post" id="commentform">
                 <h3 class="coms_underline">
                     我来吐槽
                 </h3>
