@@ -19,6 +19,8 @@
 
     <!--样式-->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
+    <!--OwO表情-->
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('js/OwO/OwO.min.css'); ?>">
     <!--icon-->
     <link rel="icon" href="<?php $this->options->iconUrl ? $this->options->iconUrl() : $this->options->themeUrl('images/favicon.ico'); ?>" type="image/x-icon"/>
     <!--图标库-->

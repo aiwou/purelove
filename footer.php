@@ -72,8 +72,9 @@
 <script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script src="//cdn.bootcss.com/typed.js/2.0.9/typed.min.js"></script>
-<script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/activate-power-mode.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/OwO/OwO.min.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
 <?php if ($this->is('index')):?>
 <!--首页才会显示幻灯片-->
 <script>
@@ -102,6 +103,16 @@
         $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', options);
         durationTime("<?php echo $this->options->startAt ?: '10/01/2016 08:00:00'; ?>");
         openNew();
+
+        var OwO_demo = new OwO({
+            logo: 'OωO表情',
+            container: document.getElementsByClassName('OwO')[0],
+            target: document.getElementsByClassName('OwO-textarea')[0],
+            api: "<?php $this->options->themeUrl('js/OwO/OwO.json'); ?>",
+            position: 'down',
+            width: '100%',
+            maxHeight: '250px'
+        });
     });
 </script>
 <?php if ($this->options->tongJiJs): ?>

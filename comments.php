@@ -91,8 +91,9 @@
                         <a href="javascript:SIMPALED.Editor.pre()">代码</a>
                         <a href="//www.appinn.com/markdown/" target="_blank">MD语法参考</a>
                     </div>
-                    <textarea name="text" id="comment" required cols="100%" rows="7" tabindex="4"><?php $this->remember('text'); ?></textarea>
+                    <textarea name="text" id="comment" class="OwO-textarea" required cols="100%" rows="7" tabindex="4"><?php $this->remember('text'); ?></textarea>
                 </div>
+                <div class="OwO"></div>
                 <div class="subcon">
                     <button class="btn btn-primary"><?php _e('吐槽一下'); ?></button>
                     <div class="cancel-comment"><?php $comments->cancelReply(); ?></div>
