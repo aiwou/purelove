@@ -84,7 +84,7 @@ function getBrowser($agent)
     } else if (preg_match('/Opera[\s|\/]([^\s]+)/i', $agent, $regs)) {
         $browserIcon = '<i class="fa fa-opera"></i>';
     } else {
-        $browserIcon = '<i class="fa fa-question"></i>';
+        $browserIcon = '<i class="fa fa-question-circle"></i>';
     }
     return $browserIcon;
 }
