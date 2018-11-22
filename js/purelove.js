@@ -76,6 +76,7 @@ jQuery(document).ready(function ($) {
         backDelay: 3000,
         loop: true,
     });
+    $(".emojionearea").emojioneArea();
 });
 
 function pjaxComplete() {
