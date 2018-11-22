@@ -57,7 +57,7 @@
 - 幻灯片 `responsiveslides.js` v1.55
 - 酷炫编辑器 `activate-power-mode.js`
 - 输入动画库 `typed.js` v2.0.9
-- OωO表情
+- 评论表情库 `emojionearea` v3.4.1
 
 ### 参与贡献
 
