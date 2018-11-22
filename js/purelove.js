@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
         backDelay: 3000,
         loop: true,
     });
-    $(".emojionearea").emojioneArea();
+    reloadEmoji();
 });
 
 function pjaxComplete() {
@@ -86,6 +86,7 @@ function pjaxComplete() {
     openNew();
     banner();
     tooltip();
+    reloadEmoji();
 }
 
 window.onscroll = function () {
@@ -183,3 +184,7 @@ console.log('\n' +
     '                        ^^^[_]^^^' +
     '\n\n ' +
     '%c PureLoveForTypecho %c www.hoehub.com 😊 Theme By Hoe ', 'color:white;background:#ffa099;padding:5px 0;', 'color:#ffa099;background:#404040;padding:5px 0;');
+
+function reloadEmoji() {
+    $(".emojionearea").emojioneArea();
+}
