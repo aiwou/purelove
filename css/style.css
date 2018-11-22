@@ -73,10 +73,6 @@ body, button, input, select, textarea, th {
     padding: 0 5px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%
-}
-
 ol, ul, li {
     cursor: default;
     list-style: none
@@ -260,10 +256,6 @@ blockquote {
 
 blockquote:hover {
     border-color: #7e50a4
-}
-
-h2, h3 {
-    font-weight: 400
 }
 
 a {
