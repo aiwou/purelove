@@ -32,6 +32,9 @@
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
     <!-- End 通过自有函数输出HTML头部信息 -->
+    <?php if ($this->options->advertisingJs): // 广告代码 ?>
+        <?php $this->options->advertisingJs(); ?>
+    <?php endif; // 广告代码 ?>
 </head>
 <body>
 <!--[if lt IE 8]>

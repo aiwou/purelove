@@ -62,6 +62,9 @@ function themeConfig($form)
 
     $tongJiJs = new Typecho_Widget_Helper_Form_Element_Textarea('tongJiJs', null, null, _t('网站统计Js代码'), _t('直接填入统计代码即可'));
     $form->addInput($tongJiJs);
+
+    $advertisingJs = new Typecho_Widget_Helper_Form_Element_Textarea('advertisingJs', null, null, _t('广告JS代码'), _t('请填入包括script标签的代码'));
+    $form->addInput($advertisingJs);
 }
 
 /**
