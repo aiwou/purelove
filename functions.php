@@ -32,6 +32,7 @@ function themeConfig($form)
             'showSiteInfo' => _t('显示网站信息'),
             'showSiteStatistics' => _t('显示网站统计'),
             'showRecentPosts' => _t('显示最新文章'),
+            'showHotPosts' => _t('显示热门文章'),
             'showTagCloud' => _t('显示标签云'),
             'showRecentComments' => _t('显示最近回复'),
             'showArchive' => _t('显示归档'),
@@ -41,6 +42,7 @@ function themeConfig($form)
             'showSiteInfo',
             'showSiteStatistics',
             'showRecentPosts',
+            'showHotPosts',
             'showTagCloud',
             'showRecentComments',
             'showArchive',
@@ -170,4 +172,24 @@ function ICIB_API()
     $content = file_get_contents('http://open.iciba.com/dsapi/?date=' . $date);
     $result = json_decode($content);
     return $result;
+}
+
+/**
+ * @param array $result
+ * @param int $num
+ * @throws Typecho_Db_Exception
+ * @throws Typecho_Exception
+ * 热门文章
+ */
+function hotPosts(&$result, $num = 5)
+{
+    $db = Typecho_Db::get();
+    $sql = $db->select()->from('table.contents')
+        ->where('type = ?', 'post')
+        ->limit($num)
+        ->order('commentsNum', Typecho_Db::SORT_DESC);
+    $result = $db->fetchAll($sql);
+    foreach ($result as &$item) {
+        $item = Typecho_Widget::widget('Widget_Abstract_Contents')->filter($item);
+    }
 }

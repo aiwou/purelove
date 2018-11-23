@@ -27,6 +27,22 @@
             </div>
         </section>
     <?php endif; ?>
+    <?php if ($this->options->sidebarBlock && in_array('showHotPosts', $this->options->sidebarBlock)): ?>
+        <section class="widgetbox">
+            <h3><?php _e('热门文章'); ?></h3>
+            <div class="textwidget">
+                <ul>
+                    <?php hotPosts($result, 10); ?>
+                    <?php foreach ($result as $post): ?>
+                        <li>
+                            <a href="<?php echo $post['permalink']; ?>" title="<?php echo _e('评论数: ') . $post['commentsNum']; ?>"><?php echo $post['title']; ?></a>
+                        </li>
+                    <?php endforeach?>
+                </ul>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <?php if ($this->options->sidebarBlock && in_array('showRecentPosts', $this->options->sidebarBlock)): ?>
         <section class="widgetbox">
             <h3><?php _e('最新文章'); ?></h3>
