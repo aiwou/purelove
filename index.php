@@ -1,10 +1,11 @@
 <?php
 /**
  * PureLoveForTypecho
+ * version 1.1.0 2018年11月23日15:32 新增最新回复做成图片墙 & 显示热门文章
  *
  * @package PureLoveForTypecho
  * @author Hoe
- * @version 1.0.0
+ * @version 1.1.0
  * @link http://www.hoehub.com
  * @time 2018年11月12日11:51
  */
