@@ -2658,3 +2658,21 @@ pre code {
 #commentform #comment {
     font-family: Michroma, 'Segoe UI Light', 'Segoe UI', 'Segoe UI WP', 'Microsoft Jhenghei', '微软雅黑', sans-serif, Times;
 }
+
+.textwidget .commentsArea {
+    height: auto;
+    overflow: hidden;
+}
+.textwidget .commentsArea .comment-item {
+    float: left;
+    overflow: hidden;
+    border: 1px solid #c3c3c3;
+    margin: 0 0 5px 5px;
+    border-radius: 5px;
+    display: inline;
+}
+
+.textwidget .commentsArea .comment-item img {
+    margin: 2px;
+    display: block;
+}

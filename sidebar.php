@@ -18,10 +18,19 @@
         <section class="widgetbox">
             <h3><?php _e('最近回复'); ?></h3>
             <div class="textwidget">
-                <ul>
+                <ul class="commentsArea">
                     <?php $this->widget('Widget_Comments_Recent')->to($comments); ?>
                     <?php while($comments->next()): ?>
-                        <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?>: <?php $comments->excerpt(35, '...'); ?></a></li>
+                        <?php
+                            $gravatar = '//secure.gravatar.com/avatar/'; // 默认使用secure.gravatar.com源
+                            $size = '40';// 自定义头像大小
+                            $rating = Helper::options()->commentsAvatarRating;
+                            $hash = md5(strtolower($comments->mail));
+                            $avatarUrl = $gravatar . $hash . '?s=' . $size . '&r=' . $rating . '&d=';
+                        ?>
+                        <a class="comment-item" href="<?php $comments->permalink(); ?>">
+                            <img src="<?php echo $avatarUrl; ?>" alt="<?php _e('评论头像'); ?>" title="<?php $comments->text(); ?>">
+                        </a>
                     <?php endwhile; ?>
                 </ul>
             </div>

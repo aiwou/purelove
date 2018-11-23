@@ -31,11 +31,11 @@ function themeConfig($form)
         [
             'showSiteInfo' => _t('显示网站信息'),
             'showSiteStatistics' => _t('显示网站统计'),
-            'showRecentPosts' => _t('显示最新文章'),
-            'showHotPosts' => _t('显示热门文章'),
-            'showTagCloud' => _t('显示标签云'),
-            'showRecentComments' => _t('显示最近回复'),
-            'showArchive' => _t('显示归档'),
+            'showRecentPosts' => _t('显示最新文章, 条数: 设置->阅读->文章列表数目'),
+            'showHotPosts' => _t('显示热门文章, 默认10条'),
+            'showTagCloud' => _t('显示标签云, 默认30条'),
+            'showRecentComments' => _t('显示最近回复, 条数: 设置->评论->评论列表数目'),
+            'showArchive' => _t('显示归档, 默认按月归档, 显示6条'),
             'showOther' => _t('显示其它杂项')
         ],
         [
