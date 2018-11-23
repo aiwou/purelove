@@ -65,3 +65,9 @@
 2. 新建 Feat_xxx 分支
 3. 提交代码
 4. 新建 Pull Request
+
+### 许可证 License
+
+- 本项目遵循GPL-3.0开源协议发布。
+- 版权所有Copyright © 2018 by Hoe (http://www.hoehub.com)
+- All rights reserved。
