@@ -1519,7 +1519,8 @@ span.kcomtime {
 }
 
 #comment-author-info {
-    height: 35px;
+    height: auto;
+    overflow: hidden;
 }
 
 #comment-author-info p {
