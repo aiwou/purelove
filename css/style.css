@@ -10,7 +10,7 @@ Tags: blog, 动漫, 萌
 ==================================================================================================================
 Engine: typecho
 Theme Name: PureLoveForTypecho
-Time: 2018年11月12日11:51
+Time: 2018年11月12日 11:51
 Author: Hoe
 Author URI: http://www.hoehub.com/
 */
@@ -2573,7 +2573,7 @@ code {
 pre {
     display: block;
     padding: 9.5px;
-    margin: 0 0 10px;
+    margin: 5px 0;
     font-size: 13px;
     line-height: 1.42857143;
     color: #333;
@@ -2680,4 +2680,16 @@ pre code {
 .textwidget .commentsArea .comment-item img {
     margin: 2px;
     display: block;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 5px 0;
+}
+
+.entry-content {
+    line-height: 2em;
 }

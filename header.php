@@ -63,7 +63,7 @@
     <div class="inner clearfix">
         <div id="menus" class="mynav">
             <div class="menu-menu-container">
-                <ul id="menu-menu" class="menu">
+                <ul id="menu-menu" class="menu font-size-14">
                     <li>
                         <a href=<?php $this->options->siteUrl(); ?>><i class="fa fa-home"></i> <?php _e('首页'); ?></a>
                     </li>
