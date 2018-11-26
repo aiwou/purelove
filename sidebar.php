@@ -19,7 +19,7 @@
             <h3><?php _e('最近回复'); ?></h3>
             <div class="textwidget">
                 <ul class="commentsArea">
-                    <?php $this->widget('Widget_Comments_Recent')->to($comments); ?>
+                    <?php $this->widget('Widget_Comments_Recent', 'ignoreAuthor=true')->to($comments); ?>
                     <?php while($comments->next()): ?>
                         <?php
                             $gravatar = '//secure.gravatar.com/avatar/'; // 默认使用secure.gravatar.com源
