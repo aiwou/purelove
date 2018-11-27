@@ -86,7 +86,7 @@
                     <?php endif; // if($this->user->hasLogin()) endif ?>
                 </div>
                 <div class="post-aread">
-                    <textarea name="text" id="comment" class="OwO-textarea emojionearea" required cols="100%" rows="7" tabindex="4" placeholder="<?php _e('来都来了，还不说两句？'); ?>"><?php $this->remember('text'); ?></textarea>
+                    <textarea name="text" id="comment" class="emojionearea" required cols="100%" rows="7" tabindex="4" placeholder="<?php _e('来都来了，还不说两句？'); ?>"><?php $this->remember('text'); ?></textarea>
                 </div>
                 <div class="subcon">
                     <button class="btn btn-primary"><?php _e('吐槽一下'); ?></button>

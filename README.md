@@ -59,6 +59,11 @@
 - 输入动画库 `typed.js` v2.0.9
 - 评论表情库 `emojionearea` v3.4.1
 
+### 集成插件
+
+- [疯狂打字机](https://gitee.com/HoeXhe/ActivatePowerMode)
+- [每日一句](https://gitee.com/HoeXhe/DailySentence)
+
 ### 参与贡献
 
 1. Fork 本项目
