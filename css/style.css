@@ -195,7 +195,6 @@ a:hover img {
 }
 
 input {
-    width: 220px;
     height: 22px;
     line-height: 22px;
     font-size: 12px;
@@ -1526,7 +1525,6 @@ span.kcomtime {
 #comment-author-info p {
     border-radius: 2px;
     border: #ccc 1px solid;
-    width: 32%;
     position: relative;
     float: left;
     margin-right: 6px;
@@ -1567,21 +1565,14 @@ span.kcomtime {
 }
 
 #comment-author-info input {
-    width: 130px;
+    width: 69%;
     height: 12px;
     line-height: 18px;
     padding: 4px;
     border-radius: 2px;
     border: 0;
-    color: #666
-}
-
-#comment-author-info p.comment-author-url {
-    width: 169px
-}
-
-#comment-author-info p.comment-author-url input {
-    width: 120px
+    color: #666;
+    background: none;
 }
 
 .success_2 {
@@ -2207,9 +2198,9 @@ span.kcomtime {
         padding: 15px 0 0 14px
     }
 
-    #comment-author-info p {
-        width: 99%;
-    }
+}
+#comment-author-info p {
+    width: 99.6%;
 }
 
 .heimu {
