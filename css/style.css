@@ -899,10 +899,10 @@ a:hover {
     font-size: 20px;
     padding: 5px 0 10px 0;
     border-bottom: 1px solid #ececec;
-    margin-bottom: 7px;
     text-align: center;
     overflow: hidden;
-    width: 100%
+    width: 100%;
+    line-height: 1.5em;
 }
 
 #article_content {
