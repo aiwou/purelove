@@ -817,7 +817,7 @@ a:hover {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: 100%;
+    width: 90%;
 }
 
 .posts h2 a {
