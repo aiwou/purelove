@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 /*
 Theme Name: PureLove
 Theme URI: http://www.wysafe.com/
@@ -816,7 +816,8 @@ a:hover {
     height: 24px;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap
+    white-space: nowrap;
+    width: 100%;
 }
 
 .posts h2 a {
