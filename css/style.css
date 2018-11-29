@@ -811,13 +811,12 @@ a:hover {
     vertical-align: top;
     margin: 6px 2px;
     font-size: 18px;
-    color: #6f85bf;
     padding: 5px 0 0 2px;
     height: 24px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: 90%;
+    width: 80%;
 }
 
 .posts h2 a {
@@ -2170,7 +2169,9 @@ span.kcomtime {
     .header {
         display: none;
     }
-
+    #menu-menu li a {
+        font-size: 12px;
+    }
 }
 #comment-author-info p {
     width: 99.6%;
