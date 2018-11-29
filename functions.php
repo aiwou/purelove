@@ -186,6 +186,7 @@ function hotPosts(&$result, $num = 5)
     $db = Typecho_Db::get();
     $sql = $db->select()->from('table.contents')
         ->where('type = ?', 'post')
+        ->where('status = ?', 'publish') // 2018年11月29日9:34:49 感谢jiffei反馈
         ->limit($num)
         ->order('commentsNum', Typecho_Db::SORT_DESC);
     $result = $db->fetchAll($sql);

@@ -86,7 +86,7 @@
 <?php endif;?>
 <script>
     function openNew () { // 从新窗口打开不是本站的链接
-        var selector = 'a[href]:not(a[href="#"], a[href^="javascript"], a[href^="mailto"], a[href^="<?php Helper::options()->siteUrl()?>"])';
+        var selector = 'a[href]:not(a[href^="#"], a[href^="javascript"], a[href^="mailto"], a[href^="<?php Helper::options()->siteUrl()?>"])';
         $("#article " + selector).each(function (key, item) {
             $(item).attr('target', '_blank');
         });
