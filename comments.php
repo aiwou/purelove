@@ -67,26 +67,25 @@
                     <?php else: // if($this->user->hasLogin()) else  ?>
                         <p>
                             <label for="author"><?php _e('昵称'); ?></label>
-                            <input type="text" name="author" id="author" value="<?php $this->remember('author'); ?>"
-                                   size="14" tabindex="1" required><em>*</em>
+                            <input type="text" name="author" id="author" value="<?php $this->remember('author'); ?>" size="14" required><em>*</em>
                         </p>
                         <p>
                             <label for="email"><?php _e('邮箱'); ?></label>
                             <input type="email" name="mail" id="email" value="<?php $this->remember('mail'); ?>" size="25"
-                                   tabindex="1" <?php echo $this->options->commentsRequireMail ? 'required' : ''; ?> >
+                                <?php echo $this->options->commentsRequireMail ? 'required' : ''; ?> >
                             <?php echo $this->options->commentsRequireMail ? '<em>*</em>' : ''; ?>
                         </p>
                         <p>
                             <label for="url"><?php _e('网站'); ?></label>
                             <input type="url" name="url" id="url" value="<?php $this->remember('url'); ?>" size="36"
-                                   tabindex="1" <?php echo $this->options->commentsRequireURL ? 'required' : ''; ?>
+                                <?php echo $this->options->commentsRequireURL ? 'required' : ''; ?>
                                    placeholder="<?php _e('http://'); ?>">
                             <?php echo $this->options->commentsRequireURL ? '<em>*</em>' : ''; ?>
                         </p>
                     <?php endif; // if($this->user->hasLogin()) endif ?>
                 </div>
                 <div class="post-aread">
-                    <textarea name="text" id="comment" class="emojionearea" required cols="100%" rows="7" tabindex="4" placeholder="<?php _e('来都来了，还不说两句？'); ?>"><?php $this->remember('text'); ?></textarea>
+                    <textarea name="text" id="comment" class="emojionearea" required cols="100%" rows="7" placeholder="<?php _e('来都来了，还不说两句？'); ?>"><?php $this->remember('text'); ?></textarea>
                 </div>
                 <div class="subcon">
                     <button class="btn btn-primary"><?php _e('吐槽一下'); ?></button>
