@@ -91,5 +91,5 @@ $this->need('header.php');
         </div>
     </article>
 <?php endwhile; ?>
-<?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;', 3, '...', ['wrapTag' => 'div', 'wrapClass' => 'pagenavi']); ?>
+<?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;', 2, '...', ['wrapTag' => 'div', 'wrapClass' => 'pagenavi']); ?>
 <?php $this->need('footer.php'); ?>
