@@ -27,9 +27,11 @@
                             $rating = Helper::options()->commentsAvatarRating;
                             $hash = md5(strtolower($comments->mail));
                             $avatarUrl = $gravatar . $hash . '?s=' . $size . '&r=' . $rating . '&d=';
+                            // 防止html标签意外闭合而导致的页面布局混乱
+                            $text = str_replace(['<', '>', '"'], '', $comments->text);
                         ?>
                         <a class="comment-item" href="<?php $comments->permalink(); ?>">
-                            <img src="<?php echo $avatarUrl; ?>" alt="<?php _e('评论头像'); ?>" title="<?php $comments->text(); ?>">
+                            <img src="<?php echo $avatarUrl; ?>" alt="<?php _e('评论头像'); ?>" title="<?php echo $text; ?>">
                         </a>
                     <?php endwhile; ?>
                 </ul>
