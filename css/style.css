@@ -2658,3 +2658,19 @@ h1, h2, h3, h4, h5, h6 {
 .entry-content {
     line-height: 2em;
 }
+
+#article-body ul, #article-body ol {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+#article-body ul li {
+    list-style: disc;
+}
+#article-body ol li {
+    list-style: decimal;
+}

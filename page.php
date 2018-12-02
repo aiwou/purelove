@@ -21,7 +21,7 @@
             </span>
         </div>
     </header>
-    <div class="entry-content font-size-14" itemtype="http://schema.org/Article" itemprop="articleBody">
+    <div id="article-body" class="entry-content font-size-14" itemtype="http://schema.org/Article" itemprop="articleBody">
         <?php $this->content(); ?>
     </div>
     <?php $this->need('comments.php'); ?>
