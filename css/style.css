@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 /*
 Theme Name: PureLove
 Theme URI: http://www.wysafe.com/
@@ -2548,7 +2548,8 @@ pre {
 }
 
 pre code {
-    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 pre, code {
