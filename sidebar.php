@@ -22,7 +22,11 @@
                     <?php $this->widget('Widget_Comments_Recent', 'ignoreAuthor=true')->to($comments); ?>
                     <?php while($comments->next()): ?>
                         <?php
-                            $gravatar = '//secure.gravatar.com/avatar/'; // 默认使用secure.gravatar.com源
+                            if (defined('__TYPECHO_GRAVATAR_PREFIX__')) {
+                                $gravatar = __TYPECHO_GRAVATAR_PREFIX__;
+                            } else {
+                                $gravatar = 'https://dn-qiniu-avatar.qbox.me/avatar/'; // 七牛云镜像
+                            }
                             $size = '40';// 自定义头像大小
                             $rating = Helper::options()->commentsAvatarRating;
                             $hash = md5(strtolower($comments->mail));
