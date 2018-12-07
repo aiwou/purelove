@@ -1,7 +1,6 @@
 <?php
 /**
  * PureLoveForTypecho
- * version 1.1.0 2018年11月23日15:32 新增最新回复做成图片墙 & 显示热门文章
  *
  * @package PureLoveForTypecho
  * @author Hoe
