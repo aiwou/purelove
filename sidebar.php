@@ -25,7 +25,8 @@
                             if (defined('__TYPECHO_GRAVATAR_PREFIX__')) {
                                 $gravatar = __TYPECHO_GRAVATAR_PREFIX__;
                             } else {
-                                $gravatar = 'https://dn-qiniu-avatar.qbox.me/avatar/'; // 七牛云镜像
+                                // https://www.v2ex.com/t/141485
+                                $gravatar = 'https://cdn.v2ex.com/gravatar/'; // 头像默认使用V2EX服务器
                             }
                             $size = '40';// 自定义头像大小
                             $rating = Helper::options()->commentsAvatarRating;
