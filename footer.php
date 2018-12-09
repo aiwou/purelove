@@ -5,7 +5,7 @@
 <span class="clearfix"></span>
 <div id="bak_top"></div>
 <footer class="footer">
-    <div class="inner clearfix">
+    <div class="inner clearfix footer-top">
         <div class="fotbox">
             <h3 title="金山词霸 每日一句">每日一句</h3>
             <div id="daily-sentence">
@@ -44,7 +44,7 @@
             <?php endif; ?>
         </div>
     </div>
-    <div class="copry clearfix">
+    <div class="copry clearfix footer-bottom">
         <div id="copyright">
             <i class="fa fa-copyright"></i>
             <?php echo $this->options->startAt ? date('Y', strtotime($this->options->startAt)) . ' -' : '';?>
