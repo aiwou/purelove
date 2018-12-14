@@ -35,7 +35,12 @@
                     <a href="<?php $comments->permalink(); ?>"><?php $comments->date(); ?></a>
                     <a rel="nofollow" class="comment-reply comment-reply-link"><?php $comments->reply(); ?></a>
                 </div>
-                <p><?php $comments->content(); ?></p>
+                <?php if ('waiting' == $comments->status): ?>
+                    <span class="comments-waiting"><?php $options->commentStatus(); ?></span>
+                <?php endif; ?>
+                <p>
+                    <?php $comments->content(); ?>
+                </p>
             </div>
         </div>
         <?php if ($comments->children) { ?>
