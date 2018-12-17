@@ -64,7 +64,6 @@
         </span>
     </div>
 </footer>
-</body>
 <!--JQ-->
 <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/ResponsiveSlides.js/1.55/responsiveslides.min.js"></script>
