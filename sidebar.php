@@ -83,9 +83,9 @@
                                 <?php $tags->name(); ?>
                             </a>
                         <?php endwhile; ?>
-                        <?php else: ?>
-                            <li><?php _e('没有任何标签'); ?></li>
                     </div>
+                <?php else: ?>
+                    <li><?php _e('没有任何标签'); ?></li>
                 <?php endif; ?>
             </div>
         </section>
