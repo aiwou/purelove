@@ -117,3 +117,5 @@
 <?php endif; ?>
 
 <?php $this->footer(); ?>
+</body>
+</html>
