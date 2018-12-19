@@ -360,7 +360,7 @@ a:hover {
     display: none
 }
 
-#navbar .inner, #navigation .inner {
+#navbar .inner {
     width: 1000px;
     margin: 0 auto
 }
@@ -979,27 +979,6 @@ a:hover {
 
 #article_like {
     margin: 0 auto
-}
-
-.article_other {
-    padding: 3px;
-    overflow: hidden;
-    position: relative;
-    margin: 8px 0;
-    color: #888;
-    line-height: 20px;
-    border: solid 1px #e2e2e2;
-    border-bottom: solid 4px #ddd;
-    background-color: #fbfbfb;
-    text-align: center
-}
-
-.article_other a {
-    color: #6f85bf
-}
-
-.article_other a:hover {
-    text-decoration: underline
 }
 
 .article_next a:before, .article_previous a:before {
@@ -2118,17 +2097,40 @@ span.kcomtime {
         right: 50%
     }
 }
-
+@media screen and (min-width: 860px) {
+    .menu-btn{
+        display: none;
+    }
+    #navigation {
+        display: block !important;
+    }
+}
 @media screen and (max-width: 860px) {
 
-    .header, #container, #content, .posts, .pagenavi, #navbar, #navigation, .inner {
+    .header, #content, .posts, .pagenavi, #navbar, .inner {
         width: 100%
     }
+    #content {
+        margin-top: 10px;
+    }
+    #container {
+        width: 100%;
+    }
 
+    #navigation {
+        width: 98%;
+        margin: 5px auto 0;
+    }
+    .mySliderBar {
+        width: 98%;
+        margin: 0 auto 10px;
+    }
+    .menu-btn {
+        display: block !important;
+    }
     .posts {
         width: 98%;
         padding: 0 0 5px 0;
-        padding-bottom: 5px;
         min-height: auto;
         height: auto;
         margin-bottom: 15px;
@@ -2136,10 +2138,29 @@ span.kcomtime {
         margin-right: auto
     }
 
-    .navfeed, .navsearch, .postspicbox, .breadcrumb, .article_other, .poststags, #related, .site-info, #bak_top {
-        display: none
+    .postspicbox, .breadcrumb, .poststags, #related, .header, #bak_top, #navigation {
+        display: none;
     }
 
+    .navsearch {
+        float: left;
+    }
+    #menu-menu .sub-menu li{
+        text-align: unset;
+        font-size: 12px;
+    }
+    #menu-menu .sub-menu {
+        position: unset;
+        display: block;
+        overflow: unset;
+        background: none;
+        box-shadow: none;
+        height: auto;
+        overflow: hidden;
+    }
+    #menu-menu li {
+        width: 100%;
+    }
     .postscontent {
         padding-left: 5px;
         padding-right: 5px
@@ -2204,6 +2225,8 @@ span.kcomtime {
         font-size: 12px;
     }
 }
+
+
 #comment-author-info p {
     width: 99.6%;
 }
@@ -2709,4 +2732,29 @@ h1, h2, h3, h4, h5, h6 {
 .comments-waiting {
     font-size: 12px;
     color: #cacaca;
+}
+.sub-menu-click {
+    width: 100%;
+}
+.menu-btn a {
+    color: white;
+}
+.menu-btn {
+    background: #666;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 2%;
+    text-align: center;
+}
+.menu-left, .menu-right {
+    float: left;
+}
+
+.menu-left {
+    font-size: 2.2em;
+}
+.menu-right {
+    margin-left: 2%;
+    color: white;
+    font-size: 1.2em;
 }

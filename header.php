@@ -59,6 +59,12 @@
     </div>
 </header>
 <!--菜单-->
+<div class="menu-btn">
+    <div class="menu-left">
+        <a href="#" class="fa fa-bars" aria-hidden="true"></a>
+    </div>
+    <div class="menu-right"><?php $this->options->title() ?></div>
+</div>
 <div id="navigation">
     <div class="inner clearfix">
         <div id="menus" class="mynav">
@@ -69,13 +75,13 @@
                     </li>
                     <!--分类-->
                     <li class="menu-item">
-                        <a href="#"><i class="fa fa-list-ul"></i> <?php _e('分类'); ?></a>
+                        <a href="#" class="sub-menu-click"><i class="fa fa-chevron-down"></i> <?php _e('分类'); ?></a>
                         <ul class="sub-menu">
                             <?php $this->widget('Widget_Metas_Category_List')->to($cats);?>
                             <?php while ($cats->next()): ?>
                                 <li>
                                     <a href="<?php $cats->permalink()?>" title="<?php $cats->name()?>">
-                                        <i class="fa fa-list-ul"></i>
+                                        <i class="fa fa-circle-o"></i>
                                         <span><?php $cats->name()?></span>
                                     </a>
                                 </li>
@@ -86,7 +92,7 @@
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while($pages->next()): ?>
                     <li>
-                        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><i class="fa fa-list-ul"></i> <?php $pages->title(); ?></a>
+                        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><i class="fa fa-list-ol"></i> <?php $pages->title(); ?></a>
                     </li>
                     <?php endwhile; ?>
                 </ul>

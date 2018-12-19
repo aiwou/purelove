@@ -10,12 +10,12 @@ jQuery(document).ready(function ($) {
         $(this).addClass("on").siblings().removeClass();
         $("." + $(this).attr("id")).fadeIn(650).siblings().hide();
     });
-    $('.menu li').hover(function () {
-        $(this).find('ul:first').slideDown(200);
-        $(this).addClass("hover");
-    }, function () {
-        $(this).find('ul').css('display', 'none');
-        $(this).removeClass("hover");
+    $('.menu-btn').click(function () {
+        $("#navigation").stop().slideToggle();
+    });
+    $('.menu-item .sub-menu-click').click(function () {
+        $(".sub-menu").stop().slideToggle(200);
+        // $(this).find(".fa").toggleClass("fa-chevron-up");
     });
 
     function hide_submenu() {
