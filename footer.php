@@ -65,7 +65,7 @@
     </div>
 </footer>
 <!--JQ-->
-<script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/ResponsiveSlides.js/1.55/responsiveslides.min.js"></script>
 <script src="//cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
 <script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
