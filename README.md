@@ -114,7 +114,11 @@
 - 首页
 
     ![首页图片](demo/index.png)
-
+    
+- 时间轴(归档)页
+    
+    ![时间轴(归档)页](demo/timeline.png)
+    
 - 文章页
 
     ![首页图片](demo/article.png)
