@@ -79,7 +79,6 @@
 
 ### 日志
 
-
 - 2018-12-26 改版归档页面
 
 - 2018-12-09 侧边栏&底部响应式显示
@@ -113,12 +112,12 @@
 
 - 首页
 
-    ![首页图片](demo/index.png)
+    ![首页图片](demo/index.jpg)
     
 - 时间轴(归档)页
     
-    ![时间轴(归档)页](demo/timeline.png)
+    ![时间轴(归档)页](demo/timeline.jpg)
     
 - 文章页
 
-    ![首页图片](demo/article.png)
+    ![首页图片](demo/article.jpg)
