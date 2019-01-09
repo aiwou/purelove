@@ -6,6 +6,10 @@
     <meta charset="<?php $this->options->charset(); ?>">
     <link rel="dns-prefetch" href="//sdn.geekzu.org">
     <link rel='dns-prefetch' href="<?php $this->options->siteUrl(); ?>"/>
+    <link rel="dns-prefetch" href="https://cdn.bootcss.com">
+    <link rel="dns-prefetch" href="https://secure.gravatar.com">
+    <link rel="dns-prefetch" href="https://cn.gravatar.com">
+    <link rel="dns-prefetch" href="https://cdn.v2ex.com">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
     <meta name="theme-color" content="#ff8c83">
     <meta name="renderer" content="webkit">
