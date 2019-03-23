@@ -65,14 +65,14 @@
     </div>
 </footer>
 <!--JQ-->
-<script src="//cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/ResponsiveSlides.js/1.55/responsiveslides.min.js"></script>
-<script src="//cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
-<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-<script src="//cdn.bootcss.com/typed.js/2.0.9/typed.min.js"></script>
-<script src="//cdn.bootcss.com/jquery.textcomplete/1.8.4/jquery.textcomplete.min.js"></script>
-<script src="//cdn.bootcss.com/emojionearea/3.4.1/emojionearea.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.55/responsiveslides.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.4/jquery.textcomplete.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
 <script src="<?php $this->options->themeUrl('js/activate-power-mode.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
 <?php if ($this->is('index')):?>

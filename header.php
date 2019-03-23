@@ -6,7 +6,7 @@
     <meta charset="<?php $this->options->charset(); ?>">
     <link rel="dns-prefetch" href="//sdn.geekzu.org">
     <link rel='dns-prefetch' href="<?php $this->options->siteUrl(); ?>"/>
-    <link rel="dns-prefetch" href="https://cdn.bootcss.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://secure.gravatar.com">
     <link rel="dns-prefetch" href="https://cn.gravatar.com">
     <link rel="dns-prefetch" href="https://cdn.v2ex.com">
@@ -24,15 +24,15 @@
     <!--样式-->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
     <!--emojionearea表情-->
-    <link href="//cdn.bootcss.com/emojionearea/3.4.1/emojionearea.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
     <!--icon-->
     <link rel="icon" href="<?php $this->options->iconUrl ? $this->options->iconUrl() : $this->options->themeUrl('images/favicon.ico'); ?>" type="image/x-icon"/>
     <!--图标库-->
-    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--代码高亮-->
-    <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.13.1/styles/vs.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs.min.css">
     <!--nprogress-->
-    <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
     <!-- End 通过自有函数输出HTML头部信息 -->
@@ -42,7 +42,7 @@
 </head>
 <body>
 <!--[if lt IE 8]>
-    <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
+    <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="https://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
 <!--头部-->
 <header class="header">
