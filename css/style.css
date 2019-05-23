@@ -2603,10 +2603,10 @@ pre {
     border-radius: 4px;
 }
 
-pre code {
+/*pre code {
     white-space: pre-wrap;
     word-wrap: break-word;
-}
+}*/
 
 pre, code {
     background: #f6f6f6;
