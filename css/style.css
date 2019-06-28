@@ -2674,7 +2674,7 @@ pre code {
 }
 
 #article .entry-content img {
-    width: 100%;
+    max-width: 100%;
 }
 #heart .fa {
     color: #ff8888;
