@@ -4,8 +4,8 @@
  *
  * @package PureLoveForTypecho
  * @author Hoe
- * @version 1.1.0
- * @link http://www.hoehub.com
+ * @version 1.2.0
+ * @link https://www.hoehub.com
  * @time 2018年11月12日11:51
  */
 

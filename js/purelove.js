@@ -64,10 +64,6 @@ jQuery(document).ready(function ($) {
             timeout: 8000,
         });
     });
-    // input
-    POWERMODE.colorful = true; // make power mode colorful 颜色
-    POWERMODE.shake = true; // turn off shake 振动
-    document.body.addEventListener('input', POWERMODE);
 
     var typed = new Typed('#typed', {
         stringsElement: '#daily-sentence',

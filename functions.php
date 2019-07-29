@@ -9,6 +9,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * Author URI: http://www.hoehub.com/
  */
 
+/**
+ * @param $form
+ * 插件设置
+ */
 function themeConfig($form)
 {
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', null, null, _t('站点Logo地址'), _t('左上角的Logo 建议尺寸160*60'));
@@ -67,6 +71,11 @@ function themeConfig($form)
 
     $advertisingJs = new Typecho_Widget_Helper_Form_Element_Textarea('advertisingJs', null, null, _t('广告JS代码'), _t('请填入包括script标签的代码'));
     $form->addInput($advertisingJs);
+
+    // 感谢@fullmetalcoder 反馈的问题 https://gitee.com/HoeXhe/PureLoveForTypecho/issues/IZTE6
+    $activatePowerMode = new Typecho_Widget_Helper_Form_Element_Radio('activatePowerMode', ['1' => '开启', '0' => '关闭'], '1', _t('是否开启疯狂打字机模式'), _t('疯狂打字机 <a href="https://gitee.com/HoeXhe/ActivatePowerMode" target="_blank">仓库地址</a> <a href="https://www.hoehub.com/PHP/typecho-ActivatePowerMode.html" target="_blank">简介地址</a>'));
+    $form->addInput($activatePowerMode);
+
 }
 
 /**
@@ -193,4 +202,70 @@ function hotPosts(&$result, $num = 5)
     foreach ($result as &$item) {
         $item = Typecho_Widget::widget('Widget_Abstract_Contents')->filter($item);
     }
+}
+
+/**
+ * @return bool
+ * 是否为移动设备
+ */
+function isMobile()
+{
+    // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
+    if (isset ($_SERVER['HTTP_X_WAP_PROFILE'])) {
+        return true;
+    }
+    // 如果via信息含有wap则一定是移动设备,部分服务商会屏蔽该信息
+    if (isset ($_SERVER['HTTP_VIA'])) {
+    // 找不到为flase,否则为true
+        return stristr($_SERVER['HTTP_VIA'], "wap") ? true : false;
+    }
+    // 脑残法，判断手机发送的客户端标志,兼容性有待提高
+    if (isset ($_SERVER['HTTP_USER_AGENT'])) {
+        $clientkeywords = array('nokia',
+            'sony',
+            'ericsson',
+            'mot',
+            'samsung',
+            'htc',
+            'sgh',
+            'lg',
+            'sharp',
+            'sie-',
+            'philips',
+            'panasonic',
+            'alcatel',
+            'lenovo',
+            'iphone',
+            'ipod',
+            'blackberry',
+            'meizu',
+            'android',
+            'netfront',
+            'symbian',
+            'ucweb',
+            'windowsce',
+            'palm',
+            'operamini',
+            'operamobi',
+            'openwave',
+            'nexusone',
+            'cldc',
+            'midp',
+            'wap',
+            'mobile'
+        );
+        // 从HTTP_USER_AGENT中查找手机浏览器的关键字
+        if (preg_match("/(" . implode('|', $clientkeywords) . ")/i", strtolower($_SERVER['HTTP_USER_AGENT']))) {
+            return true;
+        }
+    }
+    // 协议法，因为有可能不准确，放到最后判断
+    if (isset ($_SERVER['HTTP_ACCEPT'])) {
+    // 如果只支持wml并且不支持html那一定是移动设备
+    // 如果支持wml和html但是wml在html之前则是移动设备
+        if ((strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') !== false) && (strpos($_SERVER['HTTP_ACCEPT'], 'text/html') === false || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html')))) {
+            return true;
+        }
+    }
+    return false;
 }

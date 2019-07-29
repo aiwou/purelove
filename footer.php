@@ -73,7 +73,15 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.4/jquery.textcomplete.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
-<script src="<?php $this->options->themeUrl('js/activate-power-mode.js'); ?>"></script>
+<?php if($this->options->activatePowerMode && !isMobile()): // 移动设备不使用疯狂打字机模式 ?>
+    <script src="<?php $this->options->themeUrl('js/activate-power-mode.js'); ?>"></script>
+    <script>
+        // input
+        POWERMODE.colorful = true; // make power mode colorful 颜色
+        POWERMODE.shake = true; // turn off shake 振动
+        document.body.addEventListener('input', POWERMODE);
+    </script>
+<?php endif ?>
 <script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
 <?php if ($this->is('index')):?>
 <!--首页才会显示幻灯片-->
