@@ -3,7 +3,7 @@
 ### 演变历程
 
 - `PureLoveForTypecho`前身是`Purelove` (`Wrodpress`主题)
-- `Purelove`是[梦月酱](http://www.wysafe.com/)设计的[`Wrodpress`](https://cn.wordpress.org/)主题, 页面设计简洁美观 完美支持移动设备端, 支持响应式, 兼容主流游览器
+- `Purelove`是梦月酱设计的[`Wrodpress`](https://cn.wordpress.org/)主题, 页面设计简洁美观 完美支持移动设备端, 支持响应式, 兼容主流游览器
 - 而本主题是在[`PureLove主题梓喵出没修改版`](https://www.azimiao.com/purelovethemes)基础上再次改版, 并从`Wrodpress`移植到`typecho`上
 
 ### Demo
@@ -30,13 +30,13 @@
 
 ### Link
 
-- [主题作者梦月酱](http://www.wysafe.com)
+- 主题作者梦月酱
 - [梦月酱`PureLove`主题原版](https://www.mywpku.com/purelove.html)
 - [`PureLove`主题梓喵出没修改版](https://www.azimiao.com/purelovethemes)
 
 ### Thanks
 
-- [梦月酱](http://www.wysafe.com/)
+- 梦月酱
 - [野兔](https://www.azimiao.com)
 - [熊猫小A](https://blog.imalan.cn)
 - [typecho社区](http://forum.typecho.org/)
