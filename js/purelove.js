@@ -83,6 +83,7 @@ function pjaxComplete() {
     banner();
     tooltip();
     reloadEmoji();
+    $(".sub-menu").hide(200); // 收起菜单
 }
 
 window.onscroll = function () {
