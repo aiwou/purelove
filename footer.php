@@ -10,48 +10,67 @@
             <h3 title="金山词霸 每日一句">每日一句</h3>
             <div id="daily-sentence">
                 <?php $ICIB = ICIB_API(); ?>
-                <p><?php echo property_exists($ICIB, 'content') ? $ICIB->content : ''; ?></p>
-                <p><?php echo property_exists($ICIB, 'note') ? $ICIB->note : ''; ?></p>
-                <p><?php echo property_exists($ICIB, 'translation') ? $ICIB->translation : ''; ?></p>
+                <p><?= property_exists($ICIB, 'content') ? $ICIB->content : ''; ?></p>
+                <p><?= property_exists($ICIB, 'note') ? $ICIB->note : ''; ?></p>
+                <p><?= property_exists($ICIB, 'translation') ? $ICIB->translation : ''; ?></p>
             </div>
             <span id="typed"></span>
         </div>
         <div class="fotbox">
             <h3>版权声明</h3>
-            <?php if ($this->options->copyright):?>
-                <?php $this->options->copyright(); ?>
-            <?php else: ?>
-                <p>1.您可自由分发和演绎本站内容，只需保留本站署名且非商业使用(CC BY-NC-SA 3.0 CN)。</p>
-                <p>2.本站引用资源会尽最大可能标明出处及著作权所有者，但不能保证对所有资源都可声明上述内容。侵权请联络作者。</p>
-            <?php endif; ?>
+            <?= $this->options->copyright ? $this->options->copyright() : ''; ?>
         </div>
         <div class="fotbox2">
             <h3>我的介绍</h3>
-            <?php if ($this->options->selfIntroduction): ?>
-                <?php $this->options->selfIntroduction(); ?>
-            <?php else: ?>
-                <p>
-                    <span>· Hoe，男，后端开发</span>
-                    <span class='myinfo_pic'>
-                        <a href="https://github.com/HoeXHe" target='_blank'><i class='fa fa-github' title='github'></i></a>
-                        <a href="https://gitee.com/HoeXhe" target='_blank'><i class='fa fa-git' title='gitee'></i></a>
-                        <a href='mailto:i@hoehub.com'><i class='fa fa-envelope-o' title='i@hoehub.com'></i></a>
-                    </span>
-                </p>
-                <p>· BUG制造者 爱打羽毛球</p>
-                <p>· 我每天都在思考如何把脑子里的钱存入银行</p>
-                <p>· 采得百花成蜜后，为谁辛苦为谁甜。—— 罗隐《蜂》</p>
-            <?php endif; ?>
+            <p>
+                <span>· <?php $this->options->name();?> <?= $this->options->gender == 1 ? '男' : '女';?> <?php $this->options->job();?></span>
+                <span class='myinfo_pic'>
+                    <?php if($this->options->github): ?>
+                        <a href="<?php $this->options->github(); ?>" target='_blank'><i class='fa fa-github' title='github'></i></a>
+                    <?php endif;?>
+                    <?php if($this->options->gitee): ?>
+                        <a href="<?php $this->options->gitee(); ?>" target='_blank'><i class='fa fa-git' title='gitee'></i></a>
+                    <?php endif;?>
+                    <?php if($this->options->email): ?>
+                        <a href='mailto:<?php $this->options->email(); ?>'><i class='fa fa-envelope-o' title='<?php $this->options->email(); ?>'></i></a>
+                    <?php endif;?>
+
+                    <?php if($this->options->qq): ?>
+                        <?php if(isMobile()): ?>
+                            <a href='mqqwpa://im/chat?chat_type=wpa&uin=<?php $this->options->qq(); ?>&version=1&src_type=web&web_src=oicqzone.com'>
+                                <i class='fa fa-qq' title='<?php $this->options->qq(); ?>'></i>
+                            </a>
+                        <?php else: ?>
+                            <a href='tencent://message/?uin=<?php $this->options->qq(); ?>&Site=http://vps.shuidazhe.com&Menu=yes'>
+                                <i class='fa fa-qq' title='<?php $this->options->qq(); ?>'></i>
+                            </a>
+                        <?php endif;?>
+                    <?php endif;?>
+
+                    <?php if($this->options->wechat): ?>
+                        <a href='javascript:;'><i class='fa fa-wechat' title='<?php $this->options->wechat(); ?>'></i></a>
+                    <?php endif;?>
+
+                    <?php if($this->options->phone): ?>
+                        <a href='tel::<?php $this->options->phone(); ?>'><i class='fa fa-phone-square' title='<?php $this->options->phone(); ?>'></i></a>
+                    <?php endif;?>
+
+                </span>
+            </p>
+            <?php $introduction = explode(PHP_EOL, $this->options->introduction); ?>
+            <?php foreach ($introduction as $item):?>
+                <p>· <?= $item; ?></p>
+            <?php endforeach; ?>
         </div>
     </div>
     <div class="copry clearfix footer-bottom">
         <div id="copyright">
             <i class="fa fa-copyright"></i>
-            <?php echo $this->options->startAt ? date('Y', strtotime($this->options->startAt)) . ' -' : '';?>
-            <?php echo date('Y');?>
+            <?= $this->options->startAt ? date('Y', strtotime($this->options->startAt)) . ' -' : ''; ?>
+            <?= date('Y'); ?>
             All rights reserved.
             <a href="http://www.miitbeian.gov.cn/" target="_blank">
-                <?php echo $this->options->beiAnCode ? $this->options->beiAnCode() : '桂ICP备16007901号-1'?>
+                <?= $this->options->beiAnCode ? $this->options->beiAnCode() : '桂ICP备16007901号-1' ?>
             </a>
         </div>
         <span id="mt">
@@ -73,26 +92,17 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.4/jquery.textcomplete.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
-<?php if($this->options->activatePowerMode && !isMobile()): // 移动设备不使用疯狂打字机模式 ?>
-    <script src="<?php $this->options->themeUrl('js/activate-power-mode.js'); ?>"></script>
-    <script>
-        // input
-        POWERMODE.colorful = true; // make power mode colorful 颜色
-        POWERMODE.shake = true; // turn off shake 振动
-        document.body.addEventListener('input', POWERMODE);
-    </script>
-<?php endif ?>
 <script src="<?php $this->options->themeUrl('js/purelove.js'); ?>"></script>
-<?php if ($this->is('index')):?>
-<!--首页才会显示幻灯片-->
+<?php if ($this->is('index')): ?>
+    <!--首页才会显示幻灯片-->
+    <script>
+        $(function () {
+            banner();
+        });
+    </script>
+<?php endif; ?>
 <script>
-    $(function () {
-        banner();
-    });
-</script>
-<?php endif;?>
-<script>
-    function openNew () { // 从新窗口打开不是本站的链接
+    function openNew() { // 从新窗口打开不是本站的链接
         var selector = 'a[href]:not(a[href^="#"], a[href^="javascript"], a[href^="mailto"], a[href^="<?php Helper::options()->siteUrl()?>"])';
         $("#article " + selector).each(function (key, item) {
             $(item).attr('target', '_blank');
@@ -101,6 +111,7 @@
             $(item).attr('target', '_blank');
         });
     }
+
     $(function () {
         var options = {
             container: '#content',
@@ -109,20 +120,11 @@
         };
         // Pjax
         $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', options);
-        durationTime("<?php echo $this->options->startAt ?: '10/01/2016 08:00:00'; ?>");
+        durationTime("<?= $this->options->startAt ?: '10/01/2016 08:00:00'; ?>");
         openNew();
     });
 </script>
-<?php if ($this->options->tongJiJs): ?>
-<script>
-    try {
-        <?php $this->options->tongJiJs(); ?>
-    } catch (e) {
-        console.log("统计代码出错!");
-    }
-</script>
-<?php endif; ?>
-
+<?= $this->options->tongJiJs ? $this->options->tongJiJs() : ''; ?>
 <?php $this->footer(); ?>
 </body>
 </html>
