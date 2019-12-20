@@ -59,7 +59,7 @@
             </p>
             <?php $introduction = explode(PHP_EOL, $this->options->introduction); ?>
             <?php foreach ($introduction as $item):?>
-                <p>· <?= $item; ?></p>
+                <?= $item ? '<p>· ' . $item . '</p>' : ''; ?>
             <?php endforeach; ?>
         </div>
     </div>
