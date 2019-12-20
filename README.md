@@ -59,11 +59,6 @@
 - 输入动画库 `typed.js` v2.0.9
 - 评论表情库 `emojionearea` v3.4.1
 
-### 集成插件
-
-- [疯狂打字机](https://gitee.com/HoeXhe/ActivatePowerMode)
-- [每日一句](https://gitee.com/HoeXhe/DailySentence)
-
 ### 参与贡献
 
 1. Fork 本项目
@@ -78,6 +73,8 @@
 - All rights reserved。
 
 ### 日志
+
+- 2019-12-20 1.取消默认项，统一在后台设置外观里配置 2.优化菜单 3.主题取消[疯狂打字机](https://www.hoehub.com/PHP/typecho-ActivatePowerMode.html)效果
 
 - 2018-12-26 改版归档页面
 

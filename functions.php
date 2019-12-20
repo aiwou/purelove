@@ -15,10 +15,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  */
 function themeConfig($form)
 {
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', null, null, _t('站点Logo地址'), _t('左上角的Logo 建议尺寸160*60'));
+    $form->addItem((new Typecho_Widget_Helper_Layout())->html(_t('<h3 style="color:black; font-weight: bold;">站点设置</h3>')));
+
+    $logoValue = '/usr/themes/PureLoveForTypecho/images/logo-160x60.png';
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', null, $logoValue, _t('站点Logo地址'), _t('左上角的Logo 建议尺寸160px*60px'));
     $form->addInput($logoUrl);
 
-    $iconUrl = new Typecho_Widget_Helper_Form_Element_Text('iconUrl', null, null, _t('站点Icon地址'), _t('网站Icon 建议尺寸32*32'));
+    $iconUrlValue = '/usr/themes/PureLoveForTypecho/images/favicon.ico';
+    $iconUrl = new Typecho_Widget_Helper_Form_Element_Text('iconUrl', null, $iconUrlValue, _t('站点Icon地址'), _t('网站Icon 建议尺寸32px*32px'));
     $form->addInput($iconUrl);
 
     $description = _t('Json格式 如 <pre class="description" style="font-family: Consolas; font-size: 12px;">
@@ -28,7 +32,12 @@ function themeConfig($form)
     {"imgUrl": "https://www.hoehub.com/banner2.png", "url": "http://www.baidu.com", "desc": "描述2"},
     {"imgUrl": "https://www.hoehub.com/banner3.png", "url": "http://www.baidu.com", "desc": "描述3"}
 ] </pre>');
-    $banners = new Typecho_Widget_Helper_Form_Element_Textarea('banners', null, null, _t('首页轮播 图片建议尺寸700*250'), $description);
+    $bannersValue = '[
+        {"imgUrl": "/usr/themes/PureLoveForTypecho/images/banner1.jpg", "url": "https://www.hoehub.com", "desc": "For you, a thousand times over. 为你，千千万万遍。--《追风筝的人》"},
+        {"imgUrl": "/usr/themes/PureLoveForTypecho/images/banner2.jpg", "url": "https://www.hoehub.com", "desc": "This path has been placed before you. The choice... 路就在你脚下，你自己决定。 —星球大战"},
+        {"imgUrl": "/usr/themes/PureLoveForTypecho/images/banner3.jpg", "url": "https://www.hoehub.com", "desc": "However big the problem, tell your heart, All is well, pal. 无论问题有多大，告诉你的心，“一切皆好，朋友。”—《三傻大闹宝莱坞》"}
+    ]';
+    $banners = new Typecho_Widget_Helper_Form_Element_Textarea('banners', null, $bannersValue, _t('首页轮播 图片建议尺寸700*250'), $description);
     $form->addInput($banners);
 
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock',
@@ -54,27 +63,61 @@ function themeConfig($form)
         ], _t('侧边栏显示'));
     $form->addInput($sidebarBlock->multiMode());
 
-    $copyright = new Typecho_Widget_Helper_Form_Element_Textarea('copyright', null, null, _t('版权声明'), _t('页脚的版权声明, 允许使用html标签'));
+    $copyrightValue = '<p>1.您可自由分发和演绎本站内容，只需保留本站署名且非商业使用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0 CN)</a></p>
+<p>2.本站引用资源会尽最大可能标明出处及著作权所有者，但不能保证对所有资源都可声明上述内容。侵权请联络作者。</p>';
+    $copyright = new Typecho_Widget_Helper_Form_Element_Textarea('copyright', null, $copyrightValue, _t('版权声明'), _t('页脚的版权声明, 允许使用html标签'));
     $form->addInput($copyright);
 
-    $selfIntroduction = new Typecho_Widget_Helper_Form_Element_Textarea('selfIntroduction', null, null, _t('我的介绍'), _t('页脚的我的介绍, 允许使用html标签'));
-    $form->addInput($selfIntroduction);
+    $form->addItem((new Typecho_Widget_Helper_Layout())->html(_t('<h3 style="color:black; font-weight: bold;">我的介绍</h3>')));
 
-    $beiAnCode = new Typecho_Widget_Helper_Form_Element_Text('beiAnCode', null, null, _t('备案号'), _t('页脚备案号'));
+    $name = new Typecho_Widget_Helper_Form_Element_Text('name', null, 'Hoe', _t('昵称'), _t('我的介绍 昵称'));
+    $form->addInput($name);
+
+    $gender = new Typecho_Widget_Helper_Form_Element_Radio('gender', ['1' => '男', '0' => '女'], '1', _t('性别'), _t('我的介绍 性别'));
+    $form->addInput($gender);
+
+    $job = new Typecho_Widget_Helper_Form_Element_Text('job', null, '后端开发', _t('职业'), _t('我的介绍 职业'));
+    $form->addInput($job);
+
+    $github = new Typecho_Widget_Helper_Form_Element_Text('github', null, 'https://github.com/HoeXHe', _t('github主页'), _t('我的介绍 github主页'));
+    $form->addInput($github);
+
+    $gitee = new Typecho_Widget_Helper_Form_Element_Text('gitee', null, 'https://gitee.com/HoeXHe', _t('码云主页'), _t('我的介绍 码云主页'));
+    $form->addInput($gitee);
+
+    $email = new Typecho_Widget_Helper_Form_Element_Text('email', null, 'i@hoehub.com', _t('邮箱'), _t('我的介绍 邮箱'));
+    $form->addInput($email);
+
+    $qq = new Typecho_Widget_Helper_Form_Element_Text('qq', null, '913746590', _t('QQ号'), _t('我的介绍 QQ号'));
+    $form->addInput($qq);
+
+    $wechat = new Typecho_Widget_Helper_Form_Element_Text('wechat', null, '', _t('微信号'), _t('我的介绍 微信号'));
+    $form->addInput($wechat);
+
+    $phone = new Typecho_Widget_Helper_Form_Element_Text('phone', null, '', _t('手机号'), _t('我的介绍 手机号'));
+    $form->addInput($phone);
+
+    $introductionValue = 'BUG制造者 爱打羽毛球
+我每天都在思考如何把脑子里的钱存入银行
+采得百花成蜜后，为谁辛苦为谁甜。—— 罗隐《蜂》';
+    $introduction = new Typecho_Widget_Helper_Form_Element_Textarea('introduction', null, $introductionValue, _t('简介、公告或其他'), _t('可以填写网站简介或网站公告等，以段落形式显示 支持html标签'));
+    $form->addInput($introduction);
+
+    $form->addItem((new Typecho_Widget_Helper_Layout())->html(_t('<h3 style="color:black; font-weight: bold;">页脚设置</h3>')));
+
+    $beiAnCode = new Typecho_Widget_Helper_Form_Element_Text('beiAnCode', null, '桂ICP备16007***号-1', _t('备案号'), _t('页脚备案号'));
     $form->addInput($beiAnCode);
 
-    $startAt = new Typecho_Widget_Helper_Form_Element_Text('startAt', null, null, _t('建站时间'), _t('显示本站运行时间 格式: 10/01/2016 08:00:00 兼容Safari浏览器'));
+    $startAt = new Typecho_Widget_Helper_Form_Element_Text('startAt', null, '10/01/2016 08:00:00', _t('建站时间'), _t('显示本站运行时间 格式: 10/01/2016 08:00:00 兼容Safari浏览器'));
     $form->addInput($startAt);
 
-    $tongJiJs = new Typecho_Widget_Helper_Form_Element_Textarea('tongJiJs', null, null, _t('网站统计Js代码'), _t('直接填入统计代码即可'));
+    $form->addItem((new Typecho_Widget_Helper_Layout())->html(_t('<h3 style="color:black; font-weight: bold;">其他设置</h3>')));
+
+    $tongJiJs = new Typecho_Widget_Helper_Form_Element_Textarea('tongJiJs', null, '<script></script>', _t('网站统计Js代码'), _t('请填入包括script标签的统计代码即可'));
     $form->addInput($tongJiJs);
 
-    $advertisingJs = new Typecho_Widget_Helper_Form_Element_Textarea('advertisingJs', null, null, _t('广告JS代码'), _t('请填入包括script标签的代码'));
+    $advertisingJs = new Typecho_Widget_Helper_Form_Element_Textarea('advertisingJs', null, '<script></script>', _t('广告JS代码'), _t('请填入包括script标签的代码'));
     $form->addInput($advertisingJs);
-
-    // 感谢@fullmetalcoder 反馈的问题 https://gitee.com/HoeXhe/PureLoveForTypecho/issues/IZTE6
-    $activatePowerMode = new Typecho_Widget_Helper_Form_Element_Radio('activatePowerMode', ['1' => '开启', '0' => '关闭'], '1', _t('是否开启疯狂打字机模式'), _t('疯狂打字机 <a href="https://gitee.com/HoeXhe/ActivatePowerMode" target="_blank">仓库地址</a> <a href="https://www.hoehub.com/PHP/typecho-ActivatePowerMode.html" target="_blank">简介地址</a>'));
-    $form->addInput($activatePowerMode);
 
 }
 
