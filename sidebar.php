@@ -8,8 +8,8 @@
                 <li><?php _e('文章总数：'); ?><?php $stat->publishedPostsNum() ?></li>
                 <li><?php _e('分类总数：'); ?><?php $stat->categoriesNum() ?></li>
                 <li><?php _e('评论总数：'); ?><?php $stat->publishedCommentsNum() ?></li>
-                <li><?php _e('页面总数：'); ?><?php echo $stat->publishedPagesNum + $stat->publishedPostsNum; ?></li>
-                <li><?php _e('标签总数：'); ?><?php echo getTagCount();?></li>
+                <li><?php _e('页面总数：'); ?><?= $stat->publishedPagesNum + $stat->publishedPostsNum; ?></li>
+                <li><?php _e('标签总数：'); ?><?= getTagCount();?></li>
                 <li><?php _e('占个位子：'); ?><i class="fa fa-heartbeat fa-lg" aria-hidden="true"></i></li>
             </ul>
         </section>
@@ -36,7 +36,7 @@
                             $text = str_replace(['<', '>', '"'], '', $comments->text);
                         ?>
                         <a class="comment-item" href="<?php $comments->permalink(); ?>">
-                            <img src="<?php echo $avatarUrl; ?>" alt="<?php _e('评论头像'); ?>" title="<?php echo $text; ?>">
+                            <img src="<?= $avatarUrl; ?>" alt="<?php _e('评论头像'); ?>" title="<?= $text; ?>">
                         </a>
                     <?php endwhile; ?>
                 </ul>
@@ -51,7 +51,7 @@
                     <?php hotPosts($result, 10); ?>
                     <?php foreach ($result as $post): ?>
                         <li>
-                            <a href="<?php echo $post['permalink']; ?>" title="<?php echo _e('评论数: ') . $post['commentsNum']; ?>"><?php echo $post['title']; ?></a>
+                            <a href="<?= $post['permalink']; ?>" title="<?= _e('评论数: ') . $post['commentsNum']; ?>"><?= $post['title']; ?></a>
                         </li>
                     <?php endforeach?>
                 </ul>

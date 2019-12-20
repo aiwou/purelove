@@ -77,15 +77,15 @@
                         <p>
                             <label for="email"><?php _e('邮箱'); ?></label>
                             <input type="email" name="mail" id="email" value="<?php $this->remember('mail'); ?>" size="25"
-                                <?php echo $this->options->commentsRequireMail ? 'required' : ''; ?> >
-                            <?php echo $this->options->commentsRequireMail ? '<em>*</em>' : ''; ?>
+                                <?= $this->options->commentsRequireMail ? 'required' : ''; ?> >
+                            <?= $this->options->commentsRequireMail ? '<em>*</em>' : ''; ?>
                         </p>
                         <p>
                             <label for="url"><?php _e('网站'); ?></label>
                             <input type="url" name="url" id="url" value="<?php $this->remember('url'); ?>" size="36"
-                                <?php echo $this->options->commentsRequireURL ? 'required' : ''; ?>
+                                <?= $this->options->commentsRequireURL ? 'required' : ''; ?>
                                    placeholder="<?php _e('http://'); ?>">
-                            <?php echo $this->options->commentsRequireURL ? '<em>*</em>' : ''; ?>
+                            <?= $this->options->commentsRequireURL ? '<em>*</em>' : ''; ?>
                         </p>
                     <?php endif; // if($this->user->hasLogin()) endif ?>
                 </div>
