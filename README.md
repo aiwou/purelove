@@ -55,7 +55,6 @@
 - 代码高亮 `highlight.js`使用`vs`样式 v9.13.1
 - 进度条 `nprogress.js` v0.2.0
 - 幻灯片 `responsiveslides.js` v1.55
-- 酷炫编辑器 `activate-power-mode.js`
 - 输入动画库 `typed.js` v2.0.9
 - 评论表情库 `emojionearea` v3.4.1
 
