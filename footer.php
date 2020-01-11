@@ -12,7 +12,6 @@
                 <?php $ICIB = ICIB_API(); ?>
                 <p><?= property_exists($ICIB, 'content') ? $ICIB->content : ''; ?></p>
                 <p><?= property_exists($ICIB, 'note') ? $ICIB->note : ''; ?></p>
-                <p><?= property_exists($ICIB, 'translation') ? $ICIB->translation : ''; ?></p>
             </div>
             <span id="typed"></span>
         </div>

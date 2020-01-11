@@ -220,7 +220,7 @@ function articleThumb($article)
  */
 function ICIB_API()
 {
-    $date = date('y-m-d');
+    $date = date('Y-m-d');
     $content = file_get_contents('http://open.iciba.com/dsapi/?date=' . $date);
     $result = json_decode($content);
     return $result;
