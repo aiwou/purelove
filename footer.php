@@ -68,7 +68,7 @@
             <?= $this->options->startAt ? date('Y', strtotime($this->options->startAt)) . ' -' : ''; ?>
             <?= date('Y'); ?>
             All rights reserved.
-            <a href="http://www.miitbeian.gov.cn/" target="_blank">
+            <a href="http://beian.miit.gov.cn" target="_blank">
                 <?= $this->options->beiAnCode ? $this->options->beiAnCode() : '桂ICP备16007901号-1' ?>
             </a>
         </div>
