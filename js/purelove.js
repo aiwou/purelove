@@ -170,18 +170,22 @@ function tooltip() {
     })
 }
 
-console.log('\n' +
-    '                            *\n' +
-    '                           /.\\\n' +
-    '                          /..\'\\\n' +
-    '                          /\'.\'\\\n' +
-    '                         /.\'\'.\'\\\n' +
-    '                         /.\'.\'.\\\n' +
-    '                  "\'""""/\'.\'\'.\'.\\""\'"\'"\n' +
-    '                        ^^^[_]^^^' +
-    '\n\n ' +
-    '%c PureLoveForTypecho %c www.hoehub.com 😊 Theme By Hoe ', 'color:white;background:#ffa099;padding:5px 0;', 'color:#ffa099;background:#404040;padding:5px 0;');
+/*
+______                         _
+| ___ \                       | |
+| |_/ / _   _  _ __   ___     | |      ___  __   __  ___
+|  __/ | | | || '__| / _ \    | |     / _ \ \ \ / / / _ \
+| |    | |_| || |   |  __/    | |____| (_) | \ V / |  __/
+\_|     \__,_||_|    \___|    \_____/ \___/   \_/   \___|
 
+ */
+let string = "______                         _\n" +
+    "| ___ \\                       | |\n" +
+    "| |_/ / _   _  _ __   ___     | |      ___  __   __  ___\n" +
+    "|  __/ | | | || '__| / _ \\    | |     / _ \\ \\ \\ / / / _ \\\n" +
+    "| |    | |_| || |   |  __/    | |____| (_) | \\ V / |  __/\n" +
+    "\\_|     \\__,_||_|    \\___|    \\_____/ \\___/   \\_/   \\___|\n";
+console.log(string +   "\n\n" +  '%c PureLoveForTypecho (纯真的爱) %c www.hoehub.com 😊 Theme By Hoe ', 'color:white;background:#ffa099;padding:5px 0;', 'color:#ffa099;background:#404040;padding:5px 0;');
 function reloadEmoji() {
     $(".emojionearea").emojioneArea();
 }

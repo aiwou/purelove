@@ -17,29 +17,71 @@ function themeConfig($form)
 {
     $form->addItem((new Typecho_Widget_Helper_Layout())->html(_t('<h3 style="color:black; font-weight: bold;">站点设置</h3>')));
 
+    // Logo
     $logoValue = '/usr/themes/PureLoveForTypecho/images/logo-160x60.png';
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', null, $logoValue, _t('站点Logo地址'), _t('左上角的Logo 建议尺寸160px*60px'));
     $form->addInput($logoUrl);
 
+    // Icon
     $iconUrlValue = '/usr/themes/PureLoveForTypecho/images/favicon.ico';
     $iconUrl = new Typecho_Widget_Helper_Form_Element_Text('iconUrl', null, $iconUrlValue, _t('站点Icon地址'), _t('网站Icon 建议尺寸32px*32px'));
     $form->addInput($iconUrl);
 
-    $description = _t('Json格式 如 <pre class="description" style="font-family: Consolas; font-size: 12px;">
+    // 轮播图
+    $description = _t('图片建议尺寸700*250<br>Json格式 如 <pre class="description" style="font-family: Consolas; font-size: 12px;">
 [
     {"imgUrl": "绝对路径", "url": "跳转地址", "desc": "描述"},
-    {"imgUrl": "https://www.hoehub.com/banner1.png", "url": "http://www.hoehub.com", "desc": "描述1"},
-    {"imgUrl": "https://www.hoehub.com/banner2.png", "url": "http://www.baidu.com", "desc": "描述2"},
-    {"imgUrl": "https://www.hoehub.com/banner3.png", "url": "http://www.baidu.com", "desc": "描述3"}
+    {"imgUrl": "https://www.hoehub.com/banner1.png", "url": "https://www.hoehub.com", "desc": "描述1"},
+    {"imgUrl": "https://www.hoehub.com/banner2.png", "url": "https://www.hoehub.com", "desc": "描述2"},
+    {"imgUrl": "https://www.hoehub.com/banner3.png", "url": "https://www.hoehub.com", "desc": "描述3"}
 ] </pre>');
     $bannersValue = '[
         {"imgUrl": "/usr/themes/PureLoveForTypecho/images/banner1.jpg", "url": "https://www.hoehub.com", "desc": "For you, a thousand times over. 为你，千千万万遍。--《追风筝的人》"},
         {"imgUrl": "/usr/themes/PureLoveForTypecho/images/banner2.jpg", "url": "https://www.hoehub.com", "desc": "This path has been placed before you. The choice... 路就在你脚下，你自己决定。 —星球大战"},
         {"imgUrl": "/usr/themes/PureLoveForTypecho/images/banner3.jpg", "url": "https://www.hoehub.com", "desc": "However big the problem, tell your heart, All is well, pal. 无论问题有多大，告诉你的心，“一切皆好，朋友。”—《三傻大闹宝莱坞》"}
     ]';
-    $banners = new Typecho_Widget_Helper_Form_Element_Textarea('banners', null, $bannersValue, _t('首页轮播 图片建议尺寸700*250'), $description);
+    $banners = new Typecho_Widget_Helper_Form_Element_Textarea('banners', null, $bannersValue, _t('首页轮播图'), $description);
+    $banners->input->setAttribute('style', 'height: 250px;');
     $form->addInput($banners);
 
+    // 检验JSON格式
+    $btn = new Typecho_Widget_Helper_Form_Element_Submit(null, null, _t('检验JSON格式'));
+    $btn->input->setAttribute('class', 'btn notice');
+    $form->addItem($btn);
+
+    $attributeValue = <<<JS
+    /**
+     * 检验字符串是否为JSON格式
+     * @param str
+     */
+    function testJSON(str) {
+        if (typeof str == 'string') {
+            try {
+                let obj = JSON.parse(str);
+                if (typeof obj == 'object' && obj) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch(e) {
+                return false;
+            }
+        }
+    }
+    let string = $('textarea[name=banners]').val();
+    let bool = testJSON(string);
+    $('textarea[name=banners]').css('border', 'none');
+    if (bool) {
+        alert('JSON格式正确');
+    } else {
+        $('textarea[name=banners]').focus().css('border', '3px solid red');
+        alert('JSON格式错误');
+    }
+    return false;
+JS;
+    $btn->input->setAttribute('onclick', $attributeValue);
+
+    // 侧边栏显示
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock',
         [
             'showSiteInfo' => _t('显示网站信息'),
@@ -63,6 +105,7 @@ function themeConfig($form)
         ], _t('侧边栏显示'));
     $form->addInput($sidebarBlock->multiMode());
 
+    // 版权声明
     $copyrightValue = '<p>1.您可自由分发和演绎本站内容，只需保留本站署名且非商业使用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0 CN)</a></p>
 <p>2.本站引用资源会尽最大可能标明出处及著作权所有者，但不能保证对所有资源都可声明上述内容。侵权请联络作者。</p>';
     $copyright = new Typecho_Widget_Helper_Form_Element_Textarea('copyright', null, $copyrightValue, _t('版权声明'), _t('页脚的版权声明, 允许使用html标签'));
@@ -88,7 +131,7 @@ function themeConfig($form)
     $email = new Typecho_Widget_Helper_Form_Element_Text('email', null, 'i@hoehub.com', _t('邮箱'), _t('我的介绍 邮箱'));
     $form->addInput($email);
 
-    $qq = new Typecho_Widget_Helper_Form_Element_Text('qq', null, '913746590', _t('QQ号'), _t('我的介绍 QQ号'));
+    $qq = new Typecho_Widget_Helper_Form_Element_Text('qq', null, '', _t('QQ号'), _t('我的介绍 QQ号'));
     $form->addInput($qq);
 
     $wechat = new Typecho_Widget_Helper_Form_Element_Text('wechat', null, '', _t('微信号'), _t('我的介绍 微信号'));
@@ -259,7 +302,7 @@ function isMobile()
     }
     // 如果via信息含有wap则一定是移动设备,部分服务商会屏蔽该信息
     if (isset ($_SERVER['HTTP_VIA'])) {
-    // 找不到为flase,否则为true
+        // 找不到为flase,否则为true
         return stristr($_SERVER['HTTP_VIA'], "wap") ? true : false;
     }
     // 脑残法，判断手机发送的客户端标志,兼容性有待提高
@@ -304,8 +347,8 @@ function isMobile()
     }
     // 协议法，因为有可能不准确，放到最后判断
     if (isset ($_SERVER['HTTP_ACCEPT'])) {
-    // 如果只支持wml并且不支持html那一定是移动设备
-    // 如果支持wml和html但是wml在html之前则是移动设备
+        // 如果只支持wml并且不支持html那一定是移动设备
+        // 如果支持wml和html但是wml在html之前则是移动设备
         if ((strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') !== false) && (strpos($_SERVER['HTTP_ACCEPT'], 'text/html') === false || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html')))) {
             return true;
         }

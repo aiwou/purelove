@@ -1,8 +1,8 @@
-# PureLoveForTypecho简介
+# PureLoveForTypecho 简介
 
 ### 演变历程
 
-- `PureLoveForTypecho`前身是`Purelove` (`Wrodpress`主题)
+- `PureLoveForTypecho` （纯真的爱）前身是`Purelove` (`Wrodpress`主题)
 - `Purelove`是梦月酱设计的[`Wrodpress`](https://cn.wordpress.org/)主题, 页面设计简洁美观 完美支持移动设备端, 支持响应式, 兼容主流游览器
 - 而本主题是在[`PureLove主题梓喵出没修改版`](https://www.azimiao.com/purelovethemes)基础上再次改版, 并从`Wrodpress`移植到`typecho`上
 
@@ -72,6 +72,8 @@
 - All rights reserved。
 
 ### 日志
+
+- 2020-03-26 v1.3.0 版本新增检验JSON格式的功能
 
 - 2019-12-20 1.取消默认项，统一在后台设置外观里配置 2.优化菜单 3.主题取消[疯狂打字机](https://www.hoehub.com/PHP/typecho-ActivatePowerMode.html)效果
 

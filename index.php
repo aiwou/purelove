@@ -2,11 +2,15 @@
 /**
  * PureLoveForTypecho
  *
+ * <a href="https://www.hoehub.com/PHP/typecho-pureLove.html" target="_blank">💗纯真的爱 主题简介</a>
+ * <a href="https://gitee.com/HoeXhe/PureLoveForTypecho" target="_blank">🌼纯真的爱 源码下载</a>
+ * <a href="https://gitee.com/HoeXhe/PureLoveForTypecho/wikis/" target="_blank">🌷纯真的爱 常见问题</a>
  * @package PureLoveForTypecho
  * @author Hoe
- * @version 1.2.0
+ * @version 1.3.0
  * @link https://www.hoehub.com
  * @time 2018年11月12日11:51
+ * @license GPL-3.0
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
