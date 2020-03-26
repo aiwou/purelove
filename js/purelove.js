@@ -185,7 +185,8 @@ let string = "______                         _\n" +
     "|  __/ | | | || '__| / _ \\    | |     / _ \\ \\ \\ / / / _ \\\n" +
     "| |    | |_| || |   |  __/    | |____| (_) | \\ V / |  __/\n" +
     "\\_|     \\__,_||_|    \\___|    \\_____/ \\___/   \\_/   \\___|\n";
-console.log(string +   "\n\n" +  '%c PureLoveForTypecho (纯真的爱) %c www.hoehub.com 😊 Theme By Hoe ', 'color:white;background:#ffa099;padding:5px 0;', 'color:#ffa099;background:#404040;padding:5px 0;');
+console.log(string +   "\n\n" +  '%c PureLoveForTypecho (纯真的爱) %c www.hoehub.com 😊 Theme By Hoe \n', 'font-family:\'Microsoft YaHei\',\'SF Pro Display\',Roboto,Noto,Arial,\'PingFang SC\',sans-serif;color:white;background:#ffa099;padding:5px 0;', 'font-family:\'Microsoft YaHei\',\'SF Pro Display\',Roboto,Noto,Arial,\'PingFang SC\',sans-serif;color:#ffa099;background:#404040;padding:5px 0;');
+
 function reloadEmoji() {
     $(".emojionearea").emojioneArea();
 }
